@@ -28,8 +28,8 @@
 \def\reportAuthorLastName{Nom} % Nom de l'élève
 \def\reportStudentId{XXXXXXXX} % Numéro de carte d'étudiant de l'élève
 
-\def\reportAuthorAddress{numéro de rue}
-\def\reportAuthorCity{VILLE, code postal} % Adresse de l'élève
+\def\reportAuthorAddress{numéro, rue}
+\def\reportAuthorCity{code postal, VILLE} % Adresse de l'élève
 \def\reportAuthorPhone{téléphone} % Téléphone de l'élève 
 \def\reportAuthorEmail{courriel} % Courriel de l'élève
 
@@ -38,8 +38,8 @@
 \def\reportYear{2013--2014} % Année universitaire
 
 \def\reportCompany{Nom Entreprise} % Nom de l'entreprise d'accueil
-\def\reportCompanyAddress{numéro rue} % Adresse de l'entreprise
-\def\reportCompanyCity{VILLE, code postal}
+\def\reportCompanyAddress{numéro, rue} % Adresse de l'entreprise
+\def\reportCompanyCity{code postal, VILLE}
 \def\reportCompanyPhone{téléphone} % Téléphone de l'entreprise
 
 \def\reportIndustrialSupervisor{Prénom Nom} % Prénom Nom de l'encadrant industriel

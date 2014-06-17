@@ -8,12 +8,14 @@
 \def\reportLongTitle{Winter is Coming -- You know nothing Jon Snow} % Titre plus long du mémoire
 \def\reportYear{2013--2014} % Année universitaire
 
-\def\reportAuthorAddress{numéro rue, VILLE, code postal} % Adresse de l'élève
+\def\reportAuthorAddress{numéro, rue} % Adresse de l'élève
+\def\reportAuthorCity{code postal, VILLE} % Adresse (cont.) de l'élève
 \def\reportAuthorPhone{téléphone} % Téléphone de l'élève 
 \def\reportAuthorEmail{jon@castleblack.com} % Courriel de l'élève
 
 \def\reportCompany{Home Box Office} % Nom de l'entreprise d'accueil
-\def\reportCompanyAddress{numéro rue, VILLE, code postal} % Adresse de l'entreprise
+\def\reportCompanyAddress{numéro, rue}  % Adresse de l'entreprise
+\def\reportCompanyCity{code postal, VILLE} % Adresse (cont.) de l'entreprise
 \def\reportCompanyPhone{téléphone} % Téléphone de l'entreprise
 
 \def\reportIndustrialSupervisor{Eddard Stark} % Prénom Nom de l'encadrant industriel
@@ -35,7 +37,7 @@
 \makesecondtitle
 
 \section*{Remerciements}
-\addcontentsline{toc}{section}{Remerciements}
+\addcontentsline{toc}{chapter}{Remerciements}
 
 {\em
 ``Night gathers, and now my watch begins. \\
@@ -58,8 +60,10 @@ for this night and all the nights to come.''
 
 \cleardoublepage
 
+%\addcontentsline{toc}{chapter}{Résumés}
+
 \section*{Résumé}
-\addcontentsline{toc}{section}{Résumé}
+\addcontentsline{toc}{chapter}{Résumé}
 
 No foe may pass amet, sun green dreams, none so dutiful no song so sweet et
 dolore magna aliqua. Ward milk of the poppy, quis tread lightly here bloody
@@ -84,7 +88,7 @@ seven hells, manhood in, king. Throne none so wise dictumst.
 
 
 \section*{Abstract}
-\addcontentsline{toc}{section}{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
 
 Green dreams mulled wine. Feed it to the goats. The wall, seven hells ever
 vigilant, est gown brother cell, nec luctus magna felis sollicitudin mauris.
@@ -115,7 +119,8 @@ debts non proident, in his cups pride and purpose mollit anim id your grace.
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
-\section{Introduction}
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
 
 Never resting pride and purpose, in his cups, sed do ever vigilant incididunt
 ut labore et dolore magna servant. Let it be written bastard, quis nostrud
@@ -137,8 +142,9 @@ consequat. In his cups, feast ironborn, tunic crimson, spiced wine, whore.
 Moon and stars, mollis quis, the wall, holdfast maester, orci. Old bear seven
 hells dictumst.
 
+\cleardoublepage
 
-\section{Présentation de l'entreprise}
+\chapter{Présentation de l'entreprise}
 
 Moon-flower juice, craven pride and purpose, mulled wine suscipit mauris, gown
 trencher take the black risus. In convallis tellus a mauris. Milk of the poppy
@@ -157,6 +163,10 @@ your grace the wall flagon cillum dolore eu fugiat nulla pariatur. Trueborn a
 taste of glory proident, squire he asked too many questions mollit anim
 righteous in wrath.
 
+\cleardoublepage
+
+
+\chapter{Autre chapitre}
 
 \section{Autre section}
 
@@ -185,41 +195,45 @@ La Figure~\ref{fig:logo-tn} représente le logo de TELECOM Nancy.
 
 Ceci est une référence bibliographique~\cite{GOT4}.
 
+\cleardoublepage
 
-\section{Conclusion}
-
+\chapter*{Conclusion}
+\addcontentsline{toc}{chapter}{Conclusion}
 
 \cleardoublepage
-\section*{Bibliographie / Webographie}
-\addcontentsline{toc}{section}{Bibliographie / Webographie}
+\chapter*{Bibliographie / Webographie}
+\addcontentsline{toc}{chapter}{Bibliographie / Webographie}
 
 \begingroup
-\renewcommand{\section}[2]{}%
+\renewcommand{\chapter}[2]{}%
 \bibliography{example} % See example.bib 
 \bibliographystyle{plain}
 \endgroup
 
 \cleardoublepage
 
-~\addcontentsline{toc}{section}{\listfigurename}
+~\addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures
 
-~\addcontentsline{toc}{section}{\listtablename}
+~\addcontentsline{toc}{chapter}{\listtablename}
 \listoftables
 
 \cleardoublepage
-\section*{Glossaire}
-\addcontentsline{toc}{section}{Glossaire}
+\chapter*{Glossaire}
+\addcontentsline{toc}{chapter}{Glossaire}
 
 \cleardoublepage
 \renewcommand{\thesubsection}{\Roman{subsection}}
+
 \appendix
-\section*{Annexes}
-\addcontentsline{toc}{section}{Annexes}
+\part*{Annexes}
+\addcontentsline{toc}{part}{Annexes}
+\cleardoublepage
 
-\subsection{Première Annexe}
+\chapter{Première Annexe}
+\cleardoublepage
 
-\subsection{Seconde Annexe}
+\chapter{Seconde Annexe}
 
 
 \cleardoublepage
