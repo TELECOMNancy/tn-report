@@ -2,7 +2,7 @@
 
 \ProvidesClass{tnreport}[2014/06/12 TELECOM Nancy Master Thesis, v0.1]
 
-\LoadClass[a4paper,french,twoside,12pt]{report}
+\LoadClass[a4paper,twoside,12pt]{report}
 
 \RequirePackage{graphicx}
 \RequirePackage[francais]{babel}
