@@ -2,7 +2,7 @@
 
 \ProvidesClass{tnreport}[2014/06/12 TELECOM Nancy Master Thesis, v0.1]
 
-\LoadClass[a4paper,french,twoside,12pt]{article}
+\LoadClass[a4paper,french,twoside,12pt]{report}
 
 \RequirePackage{graphicx}
 \RequirePackage[francais]{babel}
@@ -13,7 +13,7 @@
 \RequirePackage{lmodern}
 \RequirePackage{mathpazo}
 \RequirePackage[a4paper]{geometry}
-\geometry{top=2.6cm, bottom=3.1cm, left=3.3cm , right=2.3cm}
+\geometry{top=2cm, bottom=2cm,right=2cm,left=2.5cm}
 
 \RequirePackage[colorlinks,linkcolor=black,citecolor=black,pagebackref]{hyperref}
 \newcommand{\email}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
@@ -28,7 +28,8 @@
 \def\reportAuthorLastName{Nom} % Nom de l'élève
 \def\reportStudentId{XXXXXXXX} % Numéro de carte d'étudiant de l'élève
 
-\def\reportAuthorAddress{numéro de rue, VILLE, code postal} % Adresse de l'élève
+\def\reportAuthorAddress{numéro de rue}
+\def\reportAuthorCity{VILLE, code postal} % Adresse de l'élève
 \def\reportAuthorPhone{téléphone} % Téléphone de l'élève 
 \def\reportAuthorEmail{courriel} % Courriel de l'élève
 
@@ -37,7 +38,8 @@
 \def\reportYear{2013--2014} % Année universitaire
 
 \def\reportCompany{Nom Entreprise} % Nom de l'entreprise d'accueil
-\def\reportCompanyAddress{numéro rue, VILLE, code postal} % Adresse de l'entreprise
+\def\reportCompanyAddress{numéro rue} % Adresse de l'entreprise
+\def\reportCompanyCity{VILLE, code postal}
 \def\reportCompanyPhone{téléphone} % Téléphone de l'entreprise
 
 \def\reportIndustrialSupervisor{Prénom Nom} % Prénom Nom de l'encadrant industriel
@@ -178,19 +180,21 @@ en vue de l'obtention du diplôme d'ingénieur de TELECOM Nancy
 
 \reportAuthorFirstName{} \reportAuthorLastName{} \\
 \reportAuthorAddress{} \\
+\reportAuthorCity{}\\
 \reportAuthorPhone{} \\
 \email{\reportAuthorEmail} \\
 \smallskip
 
 TELECOM Nancy\\
 193 avenue Paul Muller,\\
-CS 90172, VILLER-L\`ES-NANCY\\
+CS 90172, VILLERS-L\`ES-NANCY\\
 +33 (0)3 83 68 26 00\\
 \email{contact@telecomnancy.eu}\\
 \smallskip
 
 \reportCompany{}\\
 \reportCompanyAddress{}\\
+\reportCompanyCity{}\\
 \reportCompanyPhone{}\\
 
 \medskip

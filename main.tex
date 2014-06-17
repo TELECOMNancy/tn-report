@@ -9,12 +9,14 @@
 \def\reportLongTitle{Winter is Coming -- You know nothing Jon Snow}
 \def\reportYear{2013--2014}
 
-\def\reportAuthorAddress{The Wall, Caste Black}
-\def\reportAuthorPhone{numéro rue, VILLE, code postal}
+\def\reportAuthorAddress{numéro rue}
+\def\reportAuthorCity{code postal, VILLE}
+\def\reportAuthorPhone{téléphone}
 \def\reportAuthorEmail{jon@castleblack.com}
 
 \def\reportCompany{Home Box Office}
-\def\reportCompanyAddress{numéro rue, VILLE, code postal}
+\def\reportCompanyAddress{numéro rue}
+\def\reportCompanyCity{code postal, VILLE}
 \def\reportCompanyPhone{téléphone}
 
 \def\reportReponsible{Eddard Stark}
@@ -41,7 +43,7 @@
 \makesecondtitle
 
 \section*{Remerciements}
-\addcontentsline{toc}{section}{Remerciements}
+\addcontentsline{toc}{chapter}{Remerciements}
 
 {\em
 ``Night gathers, and now my watch begins. \\
@@ -121,7 +123,8 @@ debts non proident, in his cups pride and purpose mollit anim id your grace.
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
-\section{Introduction}
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
 
 Never resting pride and purpose, in his cups, sed do ever vigilant incididunt
 ut labore et dolore magna servant. Let it be written bastard, quis nostrud
@@ -144,7 +147,7 @@ Moon and stars, mollis quis, the wall, holdfast maester, orci. Old bear seven
 hells dictumst.
 
 
-\section{Présentation de l'entreprise}
+\chapter{Présentation de l'entreprise}
 
 Moon-flower juice, craven pride and purpose, mulled wine suscipit mauris, gown
 trencher take the black risus. In convallis tellus a mauris. Milk of the poppy
@@ -164,7 +167,7 @@ taste of glory proident, squire he asked too many questions mollit anim
 righteous in wrath.
 
 
-\section{Autre section}
+\chapter{Autre section}
 
 Green dreams none so dutiful, tread lightly here, sed do spearwife mulled wine
 sandsilk labore et dolore magna aliqua. Greyscale our sun shines bright, milk
@@ -174,9 +177,9 @@ pavilion none so wise smallfolk, old bear though all men do despise us you
 know nothing.
 
 
-\subsection{Première sous-section}
+\section{Première sous-section}
 
-\subsubsection{Première sous-sous section}
+\subsection{Première sous-sous section}
 
 Exemple d'illustration :
 
@@ -192,12 +195,13 @@ La Figure~\ref{fig:logo-tn} représente le logo de TELECOM Nancy.
 Ceci est une référence bibliographique~\cite{GOT4}.
 
 
-\section{Conclusion}
+\chapter*{Conclusion}
+\addcontentsline{toc}{chapter}{Conclusion}
 
 
 \cleardoublepage
-\section*{Bibliographie / Webographie}
-\addcontentsline{toc}{section}{Bibliographie / Webographie}
+\chapter*{Bibliographie / Webographie}
+\addcontentsline{toc}{chapter}{Bibliographie / Webographie}
 
 \begingroup
 \renewcommand{\section}[2]{}%
@@ -207,25 +211,28 @@ Ceci est une référence bibliographique~\cite{GOT4}.
 
 \cleardoublepage
 
-~\addcontentsline{toc}{section}{\listfigurename}
+~\addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures
 
-~\addcontentsline{toc}{section}{\listtablename}
+~\addcontentsline{toc}{chapter}{\listtablename}
 \listoftables
 
 \cleardoublepage
-\section*{Glossaire}
-\addcontentsline{toc}{section}{Glossaire}
+\chapter*{Glossaire}
+\addcontentsline{toc}{chapter}{Glossaire}
 
 \cleardoublepage
 \renewcommand{\thesubsection}{\Roman{subsection}}
 \appendix
-\section*{Annexes}
-\addcontentsline{toc}{section}{Annexes}
+%\chapter*{Annexes}
+%\addcontentsline{toc}{chapter}{Annexes}
 
-\subsection{Première Annexe}
+\part*{Annexes}
+\addcontentsline{toc}{part}{Annexes}
+\appendix
+\chapter{Première Annexe}
 
-\subsection{Seconde Annexe}
+\chapter{Seconde Annexe}
 
 
 
