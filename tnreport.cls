@@ -16,7 +16,15 @@
 \geometry{top=2cm, bottom=2cm,right=2cm,left=2.5cm}
 
 \RequirePackage[colorlinks,linkcolor=black,citecolor=black,pagebackref]{hyperref}
+
 \newcommand{\email}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
+
+\RequirePackage{draftwatermark}
+\@sc@wm@stampfalse
+\SetWatermarkText{Confidential}
+\SetWatermarkScale{.8}
+\DeclareOption{confidential}{\@sc@wm@stamptrue}
+\ProcessOptions
 
 \addto\captionsfrench{%
   \renewcommand\listfigurename{Liste des illustrations}}
