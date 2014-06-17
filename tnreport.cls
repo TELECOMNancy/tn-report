@@ -108,7 +108,7 @@ Encadrant universitaire : \reportAcademicSupervisor{}
   
   {\bf Nom, prénom :} \reportAuthorLastName{}, \reportAuthorFirstName{}
   
-  {\bf \'Eléve-ingénieur(e) régulièrement inscrit(e) en 3e année à TELECOM Nancy}
+  {\bf \'Elève-ingénieur(e) régulièrement inscrit(e) en 3\up{e} année à TELECOM Nancy}
   
   {\bf N de carte d'étudiant(e) :} \reportStudentId{}
   
