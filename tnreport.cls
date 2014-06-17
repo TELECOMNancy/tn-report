@@ -179,7 +179,7 @@ en vue de l'obtention du diplôme d'ingénieur de TELECOM Nancy
 \reportAuthorFirstName{} \reportAuthorLastName{} \\
 \reportAuthorAddress{} \\
 \reportAuthorPhone{} \\
-\email{\reportAuthorEmail{}} \\
+\email{\reportAuthorEmail} \\
 \smallskip
 
 TELECOM Nancy\\
