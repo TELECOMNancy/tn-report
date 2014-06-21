@@ -16,6 +16,7 @@
 \geometry{top=2cm, bottom=2cm,right=2cm,left=2.5cm}
 
 \RequirePackage[colorlinks,linkcolor=black,citecolor=black,pagebackref]{hyperref}
+\RequirePackage{acronym}
 
 \newcommand{\email}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
 
