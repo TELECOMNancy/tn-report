@@ -68,12 +68,11 @@
 \def\maketitle{%
 \pagestyle{empty}
 \begin{center}
-	
-\includegraphics[width=4.5cm]{figures/telecom_nancy-logo}
+\includegraphics[width=4.5cm]{figures/school-logo}
 \hspace{5mm}
-\includegraphics[width=4.5cm]{figures/lorraine_inp-logo}
+\includegraphics[width=4.5cm]{figures/collegium-logo}
 \hspace{5mm}
-\includegraphics[width=4.5cm]{figures/univ_lorraine-logo}
+\includegraphics[width=4.5cm]{figures/university-logo}
 
 \vfill
 
