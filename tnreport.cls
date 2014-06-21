@@ -47,9 +47,15 @@
 \def\reportYear{2013--2014} % Année universitaire
 
 \def\reportCompany{Nom Entreprise} % Nom de l'entreprise d'accueil
-\def\reportCompanyAddress{numéro, rue} % Adresse de l'entreprise
-\def\reportCompanyCity{code postal, VILLE}
+\def\reportCompanyAddress{numéro, rue} % Rue de l'entreprise
+\def\reportCompanyCity{code postal, VILLE} % Ville de l'entreprise
 \def\reportCompanyPhone{téléphone} % Téléphone de l'entreprise
+
+\def\reportSchool{TELECOM Nancy} % Nom de l'école
+\def\reportSchoolAddress{193 avenue Paul Muller} % Rue de l'école
+\def\reportSchoolCity{CS 90172, VILLERS-L\`ES-NANCY} % Ville de l'école
+\def\reportSchoolPhone{+33 (0)3 83 68 26 00} % Téléphone de l'école
+\def\reportSchoolEmail{contact@telecomnancy.eu}
 
 \def\reportIndustrialSupervisor{Prénom Nom} % Prénom Nom de l'encadrant industriel
 \def\reportAcademicSupervisor{Prénom Nom} % Prénom Nom de l'encadrant académique
@@ -85,7 +91,7 @@
 
 Stage de fin d'études réalisé dans l'entreprise \reportCompany{}
 
-en vue de l'obtention du diplôme d'ingénieur de TELECOM Nancy
+en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}
 
 
 \vfill
@@ -119,7 +125,7 @@ Encadrant universitaire : \reportAcademicSupervisor{}
   
   {\bf Nom, prénom :} \reportAuthorLastName{}, \reportAuthorFirstName{}
   
-  {\bf \'Elève-ingénieur(e) régulièrement inscrit(e) en 3\up{e} année à TELECOM Nancy}
+  {\bf \'Elève-ingénieur(e) régulièrement inscrit(e) en 3\up{e} année à \reportSchool{}}
   
   {\bf N de carte d'étudiant(e) :} \reportStudentId{}
   
@@ -182,7 +188,7 @@ Encadrant universitaire : \reportAcademicSupervisor{}
 
 Stage de fin d'études réalisé dans l'entreprise \reportCompany{}
 
-en vue de l'obtention du diplôme d'ingénieur de TELECOM Nancy
+en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}
 
 \vfill
 \end{center}
@@ -194,11 +200,11 @@ en vue de l'obtention du diplôme d'ingénieur de TELECOM Nancy
 \email{\reportAuthorEmail} \\
 \smallskip
 
-TELECOM Nancy\\
-193 avenue Paul Muller,\\
-CS 90172, VILLERS-L\`ES-NANCY\\
-+33 (0)3 83 68 26 00\\
-\email{contact@telecomnancy.eu}\\
+\reportSchool{}\\
+\reportSchoolAddress{},\\
+\reportSchoolCity{}\\
+\reportSchoolPhone{}\\
+\email{\reportSchoolEmail}\\
 \smallskip
 
 \reportCompany{}\\
