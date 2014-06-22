@@ -19,6 +19,7 @@
 \RequirePackage{acronym}
 
 \newcommand{\email}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
+\newcommand{\universityYear}[1]{\the\numexpr #1 - 1 \relax--\the#1}
 
 \RequirePackage{draftwatermark}
 \@sc@wm@stampfalse
@@ -43,8 +44,8 @@
 \def\reportAuthorEmail{courriel} % Courriel de l'élève
 
 \def\reportTitle{Titre de stage} % Titre du mémoire
-\def\reportLongTitle{Titre du stage un peu plus long qui peut prendre deux lignes si nécessaire} % Titre plus long du mémoire
-\def\reportYear{2013--2014} % Année universitaire
+\def\reportLongTitle{\reportTitle{}} % Titre plus long du mémoire
+\def\reportYear{\universityYear{\year}} % Année universitaire
 
 \def\reportCompany{Nom Entreprise} % Nom de l'entreprise d'accueil
 \def\reportCompanyAddress{numéro, rue} % Rue de l'entreprise
@@ -56,6 +57,8 @@
 \def\reportSchoolCity{CS 90172, VILLERS-L\`ES-NANCY} % Ville de l'école
 \def\reportSchoolPhone{+33 (0)3 83 68 26 00} % Téléphone de l'école
 \def\reportSchoolEmail{contact@telecomnancy.eu}
+
+\def\reportSchoolDiplomaYear{3} % Année dipomante
 
 \def\reportIndustrialSupervisor{Prénom Nom} % Prénom Nom de l'encadrant industriel
 \def\reportAcademicSupervisor{Prénom Nom} % Prénom Nom de l'encadrant académique
@@ -124,9 +127,9 @@ Encadrant universitaire : \reportAcademicSupervisor{}
   
   {\bf Nom, prénom :} \reportAuthorLastName{}, \reportAuthorFirstName{}
   
-  {\bf \'Elève-ingénieur(e) régulièrement inscrit(e) en 3\up{e} année à \reportSchool{}}
+  {\bf \'Elève-ingénieur(e) régulièrement inscrit(e) en \reportSchoolDiplomaYear{}\up{e} année à \reportSchool{}}
   
-  {\bf N de carte d'étudiant(e) :} \reportStudentId{}
+  {\bf Numéro de carte de l'étudiant(e) :} \reportStudentId{}
   
   {\bf Année universitaire :} \reportYear{}
   
