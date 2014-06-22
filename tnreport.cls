@@ -58,6 +58,8 @@
 \def\reportSchoolPhone{+33 (0)3 83 68 26 00} % Téléphone de l'école
 \def\reportSchoolEmail{contact@telecomnancy.eu}
 
+\def\reportSchoolDiplomaYear{3} % Année dipomante
+
 \def\reportIndustrialSupervisor{Prénom Nom} % Prénom Nom de l'encadrant industriel
 \def\reportAcademicSupervisor{Prénom Nom} % Prénom Nom de l'encadrant académique
 
@@ -125,7 +127,7 @@ Encadrant universitaire : \reportAcademicSupervisor{}
   
   {\bf Nom, prénom :} \reportAuthorLastName{}, \reportAuthorFirstName{}
   
-  {\bf \'Elève-ingénieur(e) régulièrement inscrit(e) en 3\up{e} année à \reportSchool{}}
+  {\bf \'Elève-ingénieur(e) régulièrement inscrit(e) en \reportSchoolDiplomaYear{}\up{e} année à \reportSchool{}}
   
   {\bf N de carte d'étudiant(e) :} \reportStudentId{}
   
