@@ -129,7 +129,7 @@ Encadrant universitaire : \reportAcademicSupervisor{}
   
   {\bf \'Elève-ingénieur(e) régulièrement inscrit(e) en \reportSchoolDiplomaYear{}\up{e} année à \reportSchool{}}
   
-  {\bf N de carte d'étudiant(e) :} \reportStudentId{}
+  {\bf Numéro de carte de l'étudiant(e) :} \reportStudentId{}
   
   {\bf Année universitaire :} \reportYear{}
   
