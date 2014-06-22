@@ -19,6 +19,7 @@
 \RequirePackage{acronym}
 
 \newcommand{\email}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
+\newcommand{\universityYear}[1]{\the\numexpr #1 - 1 \relax--\the#1}
 
 \RequirePackage{draftwatermark}
 \@sc@wm@stampfalse
