@@ -44,8 +44,8 @@
 \def\reportAuthorEmail{courriel} % Courriel de l'élève
 
 \def\reportTitle{Titre de stage} % Titre du mémoire
-\def\reportLongTitle{Titre du stage un peu plus long qui peut prendre deux lignes si nécessaire} % Titre plus long du mémoire
-\def\reportYear{2013--2014} % Année universitaire
+\def\reportLongTitle{\reportTitle{}} % Titre plus long du mémoire
+\def\reportYear{\universityYear{\year}} % Année universitaire
 
 \def\reportCompany{Nom Entreprise} % Nom de l'entreprise d'accueil
 \def\reportCompanyAddress{numéro, rue} % Rue de l'entreprise
