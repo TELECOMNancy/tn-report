@@ -34,6 +34,10 @@
 \setlength{\parindent}{0pt}
 \parskip 10pt
 
+\def\includeCompanyLogo{%
+  \@ifundefined{reportCompanyLogoPath}{}{\includegraphics[height=6em]{\reportCompanyLogoPath}}
+}
+
 \def\reportAuthorFirstName{Prénom} % Prénom de l'élève
 \def\reportAuthorLastName{Nom} % Nom de l'élève
 \def\reportStudentId{XXXXXXXX} % Numéro de carte d'étudiant de l'élève
@@ -51,7 +55,7 @@
 \def\reportCompanyAddress{numéro, rue} % Rue de l'entreprise
 \def\reportCompanyCity{code postal, VILLE} % Ville de l'entreprise
 \def\reportCompanyPhone{téléphone} % Téléphone de l'entreprise
-
+%\def\reportCompanyLogoPath{figures/anonymous_company-logo} % Logo de l'entreprise
 \def\reportSchool{TELECOM Nancy} % Nom de l'école
 \def\reportSchoolAddress{193 avenue Paul Muller} % Rue de l'école
 \def\reportSchoolCity{CS 90172, VILLERS-L\`ES-NANCY} % Ville de l'école
@@ -209,10 +213,14 @@ en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}
 \email{\reportSchoolEmail}\\
 \smallskip
 
-\reportCompany{}\\
-\reportCompanyAddress{}\\
-\reportCompanyCity{}\\
-\reportCompanyPhone{}\\
+\begin{tabular}{@{}lr@{}}
+\parbox[b]{.7\linewidth}{
+\reportCompany{} \\
+\reportCompanyAddress{} \\
+\reportCompanyCity{} \\
+\reportCompanyPhone{} \\
+} & \includeCompanyLogo{} \\
+\end{tabular}
 
 \medskip
 
