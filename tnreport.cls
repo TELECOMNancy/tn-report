@@ -23,7 +23,7 @@
 
 \RequirePackage{draftwatermark}
 \@sc@wm@stampfalse
-\SetWatermarkText{Confidential}
+\SetWatermarkText{Confidentiel}
 \SetWatermarkScale{.8}
 \DeclareOption{confidential}{\@sc@wm@stamptrue}
 \ProcessOptions
