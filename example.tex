@@ -60,8 +60,6 @@ for this night and all the nights to come.''
 
 \cleardoublepage
 
-%\addcontentsline{toc}{chapter}{Résumés}
-
 \section*{Résumé}
 \addcontentsline{toc}{chapter}{Résumé}
 
@@ -201,24 +199,18 @@ Ceci est une référence bibliographique~\cite{GOT4}.
 \addcontentsline{toc}{chapter}{Conclusion}
 
 \cleardoublepage
-\chapter*{Bibliographie / Webographie}
-\addcontentsline{toc}{chapter}{Bibliographie / Webographie}
-
-\begingroup
-\renewcommand{\chapter}[2]{}%
+\renewcommand{\tocbibname}{Bibliographie / Webographie}
 \bibliography{example} % See example.bib 
 \bibliographystyle{plain}
-\endgroup
 
 \cleardoublepage
 
-~\addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures
-
-~\addcontentsline{toc}{chapter}{\listtablename}
-\listoftables
-
 \cleardoublepage
+
+\listoftables
+\cleardoublepage
+
 \chapter*{Glossaire}
 \addcontentsline{toc}{chapter}{Glossaire}
 

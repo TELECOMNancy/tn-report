@@ -31,6 +31,8 @@
 \addto\captionsfrench{%
   \renewcommand\listfigurename{Liste des illustrations}}
 
+\usepackage[chapter]{tocbibind}
+
 \setlength{\parindent}{0pt}
 \parskip 10pt
 
