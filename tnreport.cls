@@ -6,11 +6,11 @@
 
 \RequirePackage{graphicx}
 \RequirePackage[francais]{babel}
-\RequirePackage{times}
 \RequirePackage{amsfonts,amssymb,amsmath,mathtools}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
-\RequirePackage{lmodern}
+%\RequirePackage{times}
+%\RequirePackage{lmodern}
 \RequirePackage{mathpazo}
 \RequirePackage[a4paper]{geometry}
 \geometry{top=2cm, bottom=2cm,right=2cm,left=2.5cm}
