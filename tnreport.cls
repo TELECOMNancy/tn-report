@@ -1,6 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 
-\ProvidesClass{tnreport}[2014/06/12 TELECOM Nancy Master Thesis, v0.1]
+\ProvidesClass{tnreport}[2015/03/13 TELECOM Nancy Master Thesis, v0.2]
 
 \LoadClass[a4paper,twoside,12pt]{report}
 
@@ -10,8 +10,10 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
 %\RequirePackage{times}
-%\RequirePackage{lmodern}
-\RequirePackage{mathpazo}
+\RequirePackage{libertine}
+%\RequirePackage{newtxtext}
+\RequirePackage[libertine]{newtxmath}
+
 \RequirePackage[a4paper]{geometry}
 \geometry{top=2cm, bottom=2cm,right=2cm,left=2.5cm}
 
@@ -30,6 +32,12 @@
 
 \addto\captionsfrench{%
   \renewcommand\listfigurename{Liste des illustrations}}
+
+
+\RequirePackage{xcolor}
+\RequirePackage{titlesec}
+\titleformat{\chapter}
+  {\normalfont\LARGE\bfseries}{\thechapter}{1em}{}
 
 \usepackage[chapter]{tocbibind}
 
@@ -64,7 +72,7 @@
 \def\reportSchoolPhone{+33 (0)3 83 68 26 00} % Téléphone de l'école
 \def\reportSchoolEmail{contact@telecomnancy.eu}
 
-\def\reportSchoolDiplomaYear{3} % Année dipomante
+\def\reportSchoolDiplomaYear{3} % Année diplomante
 
 \def\reportIndustrialSupervisor{Prénom Nom} % Prénom Nom de l'encadrant industriel
 \def\reportAcademicSupervisor{Prénom Nom} % Prénom Nom de l'encadrant académique
@@ -78,22 +86,28 @@
 \pagestyle{empty}
 \begin{center}
 \includegraphics[width=4.5cm]{figures/school-logo}
-\hspace{5mm}
+\hspace{9mm}
 \includegraphics[width=4.5cm]{figures/collegium-logo}
-\hspace{5mm}
+\hspace{9mm}
 \includegraphics[width=4.5cm]{figures/university-logo}
 
 \vfill
 
-{\Huge Mémoire d'ingénieur}
+{\fontsize{40}{40}\selectfont Mémoire d'ingénieur}
 
 \rule{\textwidth}{1pt}
 
-{\Large \reportTitle{}}
+\bigskip
 
-{\large \bf \reportAuthorFirstName{} \reportAuthorLastName{}}
+{\fontsize{22}{22}\selectfont \reportTitle{}}
 
-{\bf Année \reportYear{}}
+\medskip
+
+{\fontsize{18}{18}\selectfont \bf \reportAuthorFirstName{} \reportAuthorLastName{}}
+
+\medskip
+
+{\fontsize{14}{14}\selectfont \bf Année \reportYear{}}
 
 \vfill
 
@@ -181,16 +195,22 @@ Encadrant universitaire : \reportAcademicSupervisor{}
 \makeatletter
 \def\makesecondtitle{%
 \begin{center}
-	
-{\Huge Mémoire d'ingénieur}
+
+{\fontsize{40}{40}\selectfont Mémoire d'ingénieur}
 
 \rule{\textwidth}{1pt}
 
-{\Large \reportTitle{}}
+\bigskip
 
-{\large \bf \reportAuthorFirstName{} \reportAuthorLastName{}}
+{\fontsize{22}{22}\selectfont \reportTitle{}}
 
-{\bf Année \reportYear{}}
+\medskip
+
+{\fontsize{18}{18}\selectfont \bf \reportAuthorFirstName{} \reportAuthorLastName{}}
+
+\medskip
+
+{\fontsize{14}{14}\selectfont \bf Année \reportYear{}}
 
 \vfill
 
