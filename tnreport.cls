@@ -30,6 +30,11 @@
 \DeclareOption{confidential}{\@sc@wm@stamptrue}
 \ProcessOptions
 
+\RequirePackage{etoolbox}
+\newbool{pidr}
+\DeclareOption{pidr}{\booltrue{pidr}}
+\ProcessOptions
+
 \addto\captionsfrench{%
   \renewcommand\listfigurename{Liste des illustrations}}
 
@@ -81,6 +86,11 @@
 \def\date{\today} % Date pour la signature de l'engagement anti-plagiat
 
 
+
+\ifbool{pidr}
+  {\def\reportType{Projet interdisciplinaire\newline ou de recherche}}
+  {\def\reportType{Mémoire d'ingénieur}}
+
 \makeatletter
 \def\maketitle{%
 \pagestyle{empty}
@@ -93,7 +103,7 @@
 
 \vfill
 
-{\fontsize{40}{40}\selectfont Mémoire d'ingénieur}
+{\fontsize{40}{40}\selectfont \reportType{}}
 
 \rule{\textwidth}{1pt}
 
@@ -132,9 +142,8 @@ Encadrant universitaire : \reportAcademicSupervisor{}
 \makeatother
 
 
-
 \makeatletter
-\def\makeAntiPlagiarismAgreement{%
+\newcommand\insertAntiPlagiarismAgreement[3]{%
 
   \begin{center}
     \Large \bf Déclaration sur l'honneur de non-plagiat
@@ -145,11 +154,11 @@ Encadrant universitaire : \reportAcademicSupervisor{}
 
   {\bf Je soussigné(e),}
   
-  {\bf Nom, prénom :} \reportAuthorLastName{}, \reportAuthorFirstName{}
+  {\bf Nom, prénom : #1, #2}
   
   {\bf \'Elève-ingénieur(e) régulièrement inscrit(e) en \reportSchoolDiplomaYear{}\up{e} année à \reportSchool{}}
   
-  {\bf Numéro de carte de l'étudiant(e) :} \reportStudentId{}
+  {\bf Numéro de carte de l'étudiant(e) :} #3
   
   {\bf Année universitaire :} \reportYear{}
   
@@ -193,10 +202,19 @@ Encadrant universitaire : \reportAcademicSupervisor{}
 
 
 \makeatletter
+\def\makeAntiPlagiarismAgreement{%
+  \insertAntiPlagiarismAgreement{\reportAuthorLastName{}}{\reportAuthorFirstName{}}{\reportStudentId{}}
+}
+\makeatother
+
+
+
+
+\makeatletter
 \def\makesecondtitle{%
 \begin{center}
 
-{\fontsize{40}{40}\selectfont Mémoire d'ingénieur}
+{\fontsize{40}{40}\selectfont \reportType{}}
 
 \rule{\textwidth}{1pt}
 
