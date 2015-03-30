@@ -35,6 +35,8 @@
 \DeclareOption{pidr}{\booltrue{pidr}}
 \ProcessOptions
 
+\RequirePackage{authblk}
+
 \addto\captionsfrench{%
   \renewcommand\listfigurename{Liste des illustrations}}
 
@@ -53,14 +55,17 @@
   \@ifundefined{reportCompanyLogoPath}{}{\includegraphics[height=6em]{\reportCompanyLogoPath}}
 }
 
-\def\reportAuthorFirstName{Prénom} % Prénom de l'élève
-\def\reportAuthorLastName{Nom} % Nom de l'élève
-\def\reportStudentId{XXXXXXXX} % Numéro de carte d'étudiant de l'élève
+%\def\reportAuthorFirstName{Prénom} % Prénom de l'élève
+%\def\reportAuthorLastName{Nom} % Nom de l'élève
+%\def\reportStudentId{XXXXXXXX} % Numéro de carte d'étudiant de l'élève
+
+
+\def\reportAuthor{Nom Prénom}
 
 \def\reportAuthorAddress{numéro, rue}
 \def\reportAuthorCity{code postal, VILLE} % Adresse de l'élève
 \def\reportAuthorPhone{téléphone} % Téléphone de l'élève 
-\def\reportAuthorEmail{courriel} % Courriel de l'élève
+\def\reportAuthorEmail{\email{courriel}} % Courriel de l'élève
 
 \def\reportTitle{Titre de stage} % Titre du mémoire
 \def\reportLongTitle{\reportTitle{}} % Titre plus long du mémoire
@@ -86,10 +91,11 @@
 \def\place{Ville} % Ville pour la signature pour l'engagement anti-plagiat
 \def\date{\today} % Date pour la signature de l'engagement anti-plagiat
 
-
+\def\reportProjectCustomer{Projet réalisé pour l'équipe XYZ du laboratoire DUMMY} % intitulé du 'client' du PIDR
 
 \ifbool{pidr}
-  {\def\reportType{Projet interdisciplinaire\newline ou de recherche}}
+  {\def\reportType{Projet interdisciplinaire\newline ou de recherche}
+   \def\reportSchoolDiplomaYear{2}}
   {\def\reportType{Mémoire d'ingénieur}}
 
 \makeatletter
@@ -114,7 +120,7 @@
 
 \medskip
 
-{\fontsize{18}{18}\selectfont \bf \reportAuthorFirstName{} \reportAuthorLastName{}}
+{\fontsize{18}{18}\selectfont \bf \reportAuthor{}}
 
 \medskip
 
@@ -124,7 +130,7 @@
 
 
 \ifbool{pidr}
-  {}
+  {\reportProjectCustomer{}}
   {Stage de fin d'études réalisé dans l'entreprise \reportCompany{}
 
    en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}}
@@ -149,7 +155,7 @@
 
 
 \makeatletter
-\newcommand\insertAntiPlagiarismAgreement[3]{%
+\newcommand\insertAntiPlagiarismAgreement[2]{%
 
   \begin{center}
     \Large \bf Déclaration sur l'honneur de non-plagiat
@@ -160,11 +166,11 @@
 
   {\bf Je soussigné(e),}
   
-  {\bf Nom, prénom : #1, #2}
+  {\bf Nom, prénom : #1}
   
   {\bf \'Elève-ingénieur(e) régulièrement inscrit(e) en \reportSchoolDiplomaYear{}\up{e} année à \reportSchool{}}
   
-  {\bf Numéro de carte de l'étudiant(e) :} #3
+  {\bf Numéro de carte de l'étudiant(e) :} #2
   
   {\bf Année universitaire :} \reportYear{}
   
@@ -208,15 +214,6 @@
 
 
 \makeatletter
-\def\makeAntiPlagiarismAgreement{%
-  \insertAntiPlagiarismAgreement{\reportAuthorLastName{}}{\reportAuthorFirstName{}}{\reportStudentId{}}
-}
-\makeatother
-
-
-
-
-\makeatletter
 \def\makesecondtitle{%
 \begin{center}
 
@@ -230,7 +227,7 @@
 
 \medskip
 
-{\fontsize{18}{18}\selectfont \bf \reportAuthorFirstName{} \reportAuthorLastName{}}
+{\fontsize{18}{18}\selectfont \bf \reportAuthor{}}
 
 \medskip
 
@@ -239,18 +236,21 @@
 \vfill
 
 \ifbool{pidr}
-  {}
+  {\reportProjectCustomer{}}
   {Stage de fin d'études réalisé dans l'entreprise \reportCompany{}
 
    en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}}
 \vfill
 \end{center}
 
-\reportAuthorFirstName{} \reportAuthorLastName{} \\
-\reportAuthorAddress{} \\
-\reportAuthorCity{}\\
-\reportAuthorPhone{} \\
-\email{\reportAuthorEmail} \\
+\reportAuthor{} \\
+\ifbool{pidr}
+  {}
+  {\reportAuthorAddress{} \\
+   \reportAuthorCity{}\\
+   \reportAuthorPhone{} \\
+  }
+\reportAuthorEmail{} \\
 \smallskip
 
 \reportSchool{}\\

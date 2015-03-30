@@ -1,37 +1,32 @@
 \documentclass[pidr]{tnreport}
 %\documentclass[confidential,pidr]{tnreport} % If you are writing confidential report
 
-\def\reportAuthorFirstName{Jon} % Prénom de l'élève
-\def\reportAuthorLastName{Snow} % Nom de l'élève
-
-\def\reportStudentId{20140410}  % Numéro de carte d'étudiant de l'élève
-
 \def\reportTitle{Winter is Coming} % Titre du mémoire
 \def\reportLongTitle{Winter is Coming -- You know nothing Jon Snow} % Titre plus long du mémoire
 
-\def\reportAuthorAddress{numéro, rue} % Adresse de l'élève
-\def\reportAuthorCity{code postal, VILLE} % Adresse (cont.) de l'élève
-\def\reportAuthorPhone{téléphone} % Téléphone de l'élève 
-\def\reportAuthorEmail{jon@castleblack.com} % Courriel de l'élève
+\def\reportAuthor{Jon Snow\\ Samwell Tarly}
+\def\reportAuthorEmail{\email{jon@castleblack.com}\\ \email{tarly@casteblack.com}} % Courriel de l'élève
+
+\def\reportSupervisor{Eddard Stark} % Prénom Nom de l'encadrant industriel
 
 \def\reportCompany{Home Box Office} % Nom de l'entreprise d'accueil
 \def\reportCompanyAddress{numéro, rue}  % Adresse de l'entreprise
 \def\reportCompanyCity{code postal, VILLE} % Adresse (cont.) de l'entreprise
 \def\reportCompanyPhone{téléphone} % Téléphone de l'entreprise
 \def\reportCompanyLogoPath{figures/anonymous_company-logo} % Logo de l'entreprise -- comment this definition to remove company logo
-\def\reportSupervisor{Eddard Stark} % Prénom Nom de l'encadrant industriel
 
 \def\place{Winterfell} % Ville pour la signature pour l'engagement anti-plagiat
 \def\date{\today} % Date pour la signature de l'engagement anti-plagiat
 
+\def\reportProjectCustomer{Projet réalisé pour l'équipe Night's Watch du laboratoire HBO}
 
 \begin{document}
   
 \maketitle
 \pagenumbering{roman}
 
-\insertAntiPlagiarismAgreement{\reportAuthorLastName{}}{\reportAuthorFirstName{}}{\reportStudentId{}}
-\insertAntiPlagiarismAgreement{\reportAuthorLastName{}}{\reportAuthorFirstName{}}{\reportStudentId{}}
+\insertAntiPlagiarismAgreement{Snow, Jon}{2014041022}
+\insertAntiPlagiarismAgreement{Tarly, Samwell}{2014031142}
 
 \cleardoublepage
 
