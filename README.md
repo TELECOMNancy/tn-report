@@ -1,13 +1,13 @@
 Master Thesis Template for LaTeX
 =========
 
-This is a very basic LaTeX template provided by [TELECOM Nancy](http://www.telecomnancy.eu) for Master thesis.
+This is a very basic LaTeX template provided by [TELECOM Nancy](http://www.telecomnancy.eu) for Master thesis and PIDR report.
 
 Usage
 ----
 
-Make a copy the provided sample latex document called `example.tex`. 
-Edit the different properties (author, title, etc.).
+Make a copy the provided sample latex document called `example-report.tex` or `example-pidr.tex`. 
+Edit the different properties (author, title, etc.). Add your references in the provided `example.bib` file (or add your own file).
 
 Contributing
 ------------
