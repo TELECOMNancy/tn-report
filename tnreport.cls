@@ -79,6 +79,7 @@
 
 \def\reportSchoolDiplomaYear{3} % Année diplomante
 
+\def\reportSupervisor{Prénom Nom} % Prénom Nom de l'encadrant (pour les PIDR uniquement)
 \def\reportIndustrialSupervisor{Prénom Nom} % Prénom Nom de l'encadrant industriel
 \def\reportAcademicSupervisor{Prénom Nom} % Prénom Nom de l'encadrant académique
 
@@ -121,19 +122,24 @@
 
 \vfill
 
-Stage de fin d'études réalisé dans l'entreprise \reportCompany{}
 
-en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}
+\ifbool{pidr}
+  {}
+  {Stage de fin d'études réalisé dans l'entreprise \reportCompany{}
 
+   en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}}
 
 \vfill
 \vfill
 
 \end{center}
 
-Maître de stage : \reportIndustrialSupervisor{}
 
-Encadrant universitaire : \reportAcademicSupervisor{}
+\ifbool{pidr}
+  {Encadrant : \reportSupervisor{}}
+  {Maître de stage : \reportIndustrialSupervisor{}
+
+   Encadrant universitaire : \reportAcademicSupervisor{}}
 
 \cleardoublepage
 \setcounter{page}{1}
@@ -232,10 +238,11 @@ Encadrant universitaire : \reportAcademicSupervisor{}
 
 \vfill
 
-Stage de fin d'études réalisé dans l'entreprise \reportCompany{}
+\ifbool{pidr}
+  {}
+  {Stage de fin d'études réalisé dans l'entreprise \reportCompany{}
 
-en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}
-
+   en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}}
 \vfill
 \end{center}
 
@@ -264,9 +271,11 @@ en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}
 
 \medskip
 
-Maître de stage : \reportIndustrialSupervisor{}
+\ifbool{pidr}
+  {Encadrant : \reportSupervisor{}}
+  {Maître de stage : \reportIndustrialSupervisor{}
 
-Encadrant universitaire : \reportAcademicSupervisor{}
+   Encadrant universitaire : \reportAcademicSupervisor{}}
 
 \cleardoublepage
 }
