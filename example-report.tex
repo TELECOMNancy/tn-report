@@ -118,6 +118,90 @@ righteous in wrath.
 
 \cleardoublepage
 
+\chapter{Exemples Listings}
+
+Il est aisé d'insérer du code dans un rapport. Il suffit de définir le langage, la légende à afficher et enfin un Label pour pouvoir y faire référence. Le résultat est donnée dans le listing \ref{lst:premierExemple}. Il est également possible de changer les couleurs, pour cela il faut éditer le lstset dans la classe tnreport.cls.
+
+\begin{lstlisting}[language=c++, caption={Premier Exemple}, label={lst:premierExemple}]
+void CEquation::IniParser()
+{
+	if (!pP){ //if not already initialized...
+		pP = new mu::Parser;
+
+		pP->DefineOprt("%", CEquation::Mod, 6); //deprecated
+		pP->DefineFun("mod", &CEquation::Mod, false);
+		pP->DefineOprt("&", AND, 1); //DEPRECATED
+		pP->DefineOprt("and", AND, 1);
+		pP->DefineOprt("|", OR, 1); //DEPRECATED
+		pP->DefineOprt("or", OR, 1);
+		pP->DefineOprt("xor", XOR, 1);
+		pP->DefineInfixOprt("!", NOT);
+		pP->DefineFun("floor", &CEquation::Floor, false);
+		pP->DefineFun("ceil", &CEquation::Ceil, false);
+		pP->DefineFun("abs", &CEquation::Abs, false);
+		pP->DefineFun("rand", &CEquation::Rand, false);
+		pP->DefineFun("tex", &CEquation::Tex, false);
+	
+		pP->DefineVar("x", &XVar);
+		pP->DefineVar("y", &YVar);
+		pP->DefineVar("z", &ZVar);
+	}
+}
+\end{lstlisting}
+\clearpage
+Il est également possible d'afficher du code directement depuis un fichier source, le résultat de cette opération est visible dans le listing \ref{lst:fromSrc}
+\lstinputlisting[language=c++,caption={Affichage depuis le fichier source},label={lst:fromSrc}]{figures/sourceCode.cpp}
+
+De nombreux languages sont supportés : \\
+ABAP2,4, ACSL, Ada4, Algol4, Ant, Assembler2,4, Awk4, bash, Basic2,4, C\#5, C++4, C4, Caml4, Clean, Cobol4, Comal, csh, Delphi, Eiffel, Elan, erlang, Euphoria, Fortran4, GCL, Gnuplot, Haskell, HTML, IDL4, inform, Java4, JVMIS, ksh, Lisp4, Logo, Lua2, make4, Mathematica1,4, Matlab, Mercury, MetaPost, Miranda, Mizar, ML, Modelica3, Modula-2, MuPAD, NASTRAN, Oberon-2, Objective C5 , OCL4, Octave, Oz, Pascal4, Perl, PHP, PL/I, Plasm, POV, Prolog, Promela, Python, R, Reduce, Rexx, RSL, Ruby, S4, SAS, Scilab, sh, SHELXL, Simula4, SQL, tcl4, TeX4, VBScript, Verilog, VHDL4, VRML4, XML, XSLT.
+\clearpage
+Il est néanmoins possible de définir le sien, il faudra alors ajouter dans la classe tnreport.cls du code resemblant au listing \ref{lst:defLang}. On y définit les différents mots-clés, ainsi que les délimiteurs des chaines de caractère et des commentaires.
+\begin{lstlisting}[language=Tex, caption={Syntaxe définition d'un langage}, label={lst:defLang}]
+\lstdefinelanguage{amf}
+{keywords=
+  {
+    xml,
+    amf,
+    volume,
+    material,
+    coordinates,
+    vertices,
+    vertex,
+    triangle,
+    x,
+    y,
+    z,
+    v1,
+    v2,
+    v3,
+    mesh,
+    object,
+    constellation,
+    metadata,
+    color,
+    texmap,
+    texture,
+    utex1,
+    utex2,
+    utex3,
+    instance,
+    deltax,
+    deltay,
+    deltaz,
+    r,
+    g,
+    b,
+    rx,
+    ry,
+    rz,
+    composite
+  },
+  sensitive=false,
+  morestring=[b]",
+  comment=[s]{<!--}{-->}
+}
+\end{lstlisting}
+\cleardoublepage
 
 \chapter{Autre chapitre}
 
@@ -163,6 +247,9 @@ Ceci est une référence bibliographique~\cite{GOT4}.
 \cleardoublepage
 
 \listoftables
+\cleardoublepage
+
+\lstlistoflistings
 \cleardoublepage
 
 \chapter*{Glossaire}
