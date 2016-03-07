@@ -60,6 +60,8 @@
 \RequirePackage{etoolbox}
 \newbool{pidr}
 \DeclareOption{pidr}{\booltrue{pidr}}
+\newbool{pi}
+\DeclareOption{pi}{\booltrue{pi}}
 \ProcessOptions
 
 \RequirePackage{authblk}
@@ -91,7 +93,7 @@
 
 \def\reportAuthorAddress{numéro, rue}
 \def\reportAuthorCity{code postal, VILLE} % Adresse de l'élève
-\def\reportAuthorPhone{téléphone} % Téléphone de l'élève 
+\def\reportAuthorPhone{téléphone} % Téléphone de l'élève
 \def\reportAuthorEmail{\email{courriel}} % Courriel de l'élève
 
 \def\reportTitle{Titre de stage} % Titre du mémoire
@@ -120,10 +122,15 @@
 
 \def\reportProjectCustomer{Projet réalisé pour l'équipe XYZ du laboratoire DUMMY} % intitulé du 'client' du PIDR
 
+\def\reportIndustrialCustomer{Projet réalisé en partenariat avec ENTERPRISE} % intitulé du 'client' du PI
+
 \ifbool{pidr}
   {\def\reportType{Projet interdisciplinaire\newline ou de recherche}
    \def\reportSchoolDiplomaYear{2}}
-  {\def\reportType{Mémoire d'ingénieur}}
+  {\ifbool{pi}
+    {\def\reportType{Projet industriel}
+        \def\reportSchoolDiplomaYear{3}}
+    {\def\reportType{Mémoire d'ingénieur}}}
 
 \makeatletter
 \def\maketitle{%
@@ -158,9 +165,11 @@
 
 \ifbool{pidr}
   {\reportProjectCustomer{}}
+  {\ifbool{pi}
+    {\reportIndustrialCustomer{}}
   {Stage de fin d'études réalisé dans l'entreprise \reportCompany{}
 
-   en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}}
+    en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}}}
 
 \vfill
 \vfill
@@ -169,10 +178,14 @@
 
 
 \ifbool{pidr}
-  {Encadrant : \reportSupervisor{}}
-  {Maître de stage : \reportIndustrialSupervisor{}
+{Encadrant : \reportSupervisor{}}
+{\ifbool{pi}
+    {Encadrant industriel : \reportSupervisor{}
 
-   Encadrant universitaire : \reportAcademicSupervisor{}}
+        Encadrant académique : \reportAcademicSupervisor{}}
+    {Maître de stage : \reportIndustrialSupervisor{}
+
+        Encadrant universitaire : \reportAcademicSupervisor{}}}
 
 \cleardoublepage
 \setcounter{page}{1}
@@ -192,17 +205,17 @@
   \medskip
 
   {\bf Je soussigné(e),}
-  
+
   {\bf Nom, prénom : #1}
-  
+
   {\bf \'Elève-ingénieur(e) régulièrement inscrit(e) en \reportSchoolDiplomaYear{}\up{e} année à \reportSchool{}}
-  
+
   {\bf Numéro de carte de l'étudiant(e) :} #2
-  
+
   {\bf Année universitaire :} \reportYear{}
-  
+
   {\bf Auteur(e) du document, mémoire, rapport ou code informatique intitulé :}
-  
+
   \begin{center}
     \Large \reportLongTitle{}
   \end{center}
@@ -264,19 +277,23 @@
 
 \ifbool{pidr}
   {\reportProjectCustomer{}}
+  {\ifbool{pi}
+    {\reportIndustrialCustomer{}}
   {Stage de fin d'études réalisé dans l'entreprise \reportCompany{}
 
-   en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}}
+    en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}}}
 \vfill
 \end{center}
 
 \reportAuthor{} \\
 \ifbool{pidr}
   {}
+  {\ifbool{pi}
+    {}
   {\reportAuthorAddress{} \\
-   \reportAuthorCity{}\\
-   \reportAuthorPhone{} \\
-  }
+    \reportAuthorCity{}\\
+    \reportAuthorPhone{} \\
+  }}
 \reportAuthorEmail{} \\
 \smallskip
 
@@ -300,9 +317,13 @@
 
 \ifbool{pidr}
   {Encadrant : \reportSupervisor{}}
+  {\ifbool{pi}
+    {Encadrant industriel : \reportSupervisor{}
+
+      Encadrant académique : \reportAcademicSupervisor{}}
   {Maître de stage : \reportIndustrialSupervisor{}
 
-   Encadrant universitaire : \reportAcademicSupervisor{}}
+    Encadrant universitaire : \reportAcademicSupervisor{}}}
 
 \cleardoublepage
 }
