@@ -12,7 +12,7 @@
 %\RequirePackage{times}
 \RequirePackage{libertine}
 %\RequirePackage{newtxtext}
-%\RequirePackage[libertine]{newtxmath}
+\RequirePackage[libertine]{newtxmath}
 
 \RequirePackage[svgnames]{xcolor}
 \RequirePackage{listings}
