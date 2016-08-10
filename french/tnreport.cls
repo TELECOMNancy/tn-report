@@ -62,6 +62,8 @@
 \DeclareOption{pidr}{\booltrue{pidr}}
 \newbool{pi}
 \DeclareOption{pi}{\booltrue{pi}}
+\newbool{stage2a}
+\DeclareOption{stage2a}{\booltrue{stage2a}}
 \ProcessOptions
 
 \RequirePackage{authblk}
@@ -130,7 +132,10 @@
   {\ifbool{pi}
     {\def\reportType{Projet industriel}
         \def\reportSchoolDiplomaYear{3}}
-    {\def\reportType{Mémoire d'ingénieur}}}
+	{\ifbool{stage2a}
+		{\def\reportType{Rapport de stage}
+			\def\reportSchoolDiplomaYear{2}}
+		{\def\reportType{Mémoire d'ingénieur}}}}
 
 \makeatletter
 \def\maketitle{%
@@ -167,9 +172,11 @@
   {\reportProjectCustomer{}}
   {\ifbool{pi}
     {\reportIndustrialCustomer{}}
-  {Stage de fin d'études réalisé dans l'entreprise \reportCompany{}
+	{\ifbool{stage2a}
+		{Stage de deuxième année réalisé dans l'entreprise \reportCompany{}}
+		{Stage de fin d'études réalisé dans l'entreprise \reportCompany{}
 
-    en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}}}
+		en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}}}}
 
 \vfill
 \vfill
@@ -279,9 +286,12 @@
   {\reportProjectCustomer{}}
   {\ifbool{pi}
     {\reportIndustrialCustomer{}}
-  {Stage de fin d'études réalisé dans l'entreprise \reportCompany{}
+	{\ifbool{stage2a}
+		{Stage de deuxième année réalisé dans l'entreprise \reportCompany{}}
+		{Stage de fin d'études réalisé dans l'entreprise \reportCompany{}
+		
+		en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}}}}
 
-    en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}}}
 \vfill
 \end{center}
 
