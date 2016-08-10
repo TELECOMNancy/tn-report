@@ -64,6 +64,8 @@
 \DeclareOption{pidr}{\booltrue{pidr}}
 \newbool{pi}
 \DeclareOption{pi}{\booltrue{pi}}
+\newbool{stage2a}
+\DeclareOption{stage2a}{\booltrue{stage2a}}
 \ProcessOptions
 
 \RequirePackage{authblk}
@@ -128,7 +130,10 @@
   {\ifbool{pi}
     {\def\reportType{Industrial Project}
         \def\reportSchoolDiplomaYear{3}}
-    {\def\reportType{Master Thesis}}}
+	{\ifbool{stage2a}
+		{\def\reportType{Internship report}
+			\def\reportSchoolDiplomaYear{2}}
+	{\def\reportType{Master Thesis}}}}
 
 \makeatletter
 \def\maketitle{%
@@ -165,11 +170,13 @@
     {\reportProjectCustomer{}}
     {\ifbool{pi}
         {\reportIndustrialCustomer{}}
-    {Final year internship realized in partnership with
+		{\ifbool{stage2a}
+			{Second year internship done in partnership with \reportCompany{}}
+		    {Final year internship realized in partnership with
     
-    \reportCompany{}
+		    \reportCompany{}
 
-    in preparation for the engineering diploma of \reportSchool{}}}
+		    in preparation for the engineering diploma of \reportSchool{}}}}
 
 \vfill
 \vfill
@@ -279,11 +286,13 @@
     {\reportProjectCustomer{}}
     {\ifbool{pi}
         {\reportIndustrialCustomer{}}
-    {Final year internship realized in partnership with
+		{\ifbool{stage2a}
+			{Second year internship done in partnership with \reportCompany{}}
+		    {Final year internship realized in partnership with
     
-    \reportCompany{}
+		    \reportCompany{}
 
-    in preparation for the engineering diploma of \reportSchool{}}}
+		    in preparation for the engineering diploma of \reportSchool{}}}}
     
 \vfill
 \end{center}
