@@ -120,9 +120,9 @@
 \def\place{City} % City of signature for the anti-plagiarism agreement
 \def\date{\today} % Date of signature for the anti-plagiarism agreement
 
-\def\reportProjectCustomer{Project realized for the XYZ team of DUMMY laboratory}
+\def\reportProjectCustomer{Project done for the XYZ team of DUMMY laboratory}
 
-\def\reportIndustrialCustomer{Project realized in partnership with \reportCompany{}}
+\def\reportIndustrialCustomer{Project done in partnership with \reportCompany{}}
 
 \ifbool{pidr}
   {\def\reportType{Cross-Disciplinary or Research Project}
@@ -172,7 +172,7 @@
         {\reportIndustrialCustomer{}}
 		{\ifbool{stage2a}
 			{Second year internship done in partnership with \reportCompany{}}
-		    {Final year internship realized in partnership with
+		    {Final year internship done in partnership with
     
 		    \reportCompany{}
 
@@ -288,7 +288,7 @@
         {\reportIndustrialCustomer{}}
 		{\ifbool{stage2a}
 			{Second year internship done in partnership with \reportCompany{}}
-		    {Final year internship realized in partnership with
+		    {Final year internship done in partnership with
     
 		    \reportCompany{}
 
