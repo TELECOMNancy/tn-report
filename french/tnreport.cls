@@ -71,6 +71,9 @@
 \addto\captionsfrench{%
   \renewcommand\listfigurename{Liste des illustrations}}
 
+\RequirePackage{glossaries}
+\makeglossaries
+
 
 \RequirePackage{xcolor}
 \RequirePackage{titlesec}
@@ -289,7 +292,7 @@
 	{\ifbool{stage2a}
 		{Stage de deuxième année réalisé dans l'entreprise \reportCompany{}}
 		{Stage de fin d'études réalisé dans l'entreprise \reportCompany{}
-		
+
 		en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}}}}
 
 \vfill

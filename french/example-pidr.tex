@@ -21,7 +21,7 @@
 \def\reportProjectCustomer{Projet réalisé pour l'équipe Night's Watch du laboratoire HBO}
 
 \begin{document}
-  
+
 \maketitle
 \pagenumbering{roman}
 
@@ -138,7 +138,7 @@ void CEquation::IniParser()
 		pP->DefineFun("abs", &CEquation::Abs, false);
 		pP->DefineFun("rand", &CEquation::Rand, false);
 		pP->DefineFun("tex", &CEquation::Tex, false);
-	
+
 		pP->DefineVar("x", &XVar);
 		pP->DefineVar("y", &YVar);
 		pP->DefineVar("z", &ZVar);
@@ -229,13 +229,17 @@ La Figure~\ref{fig:logo-tn} représente le logo de \reportSchool{}.
 
 Ceci est une référence bibliographique~\cite{GOT4}.
 
+Entrée dans le glossaire:
+\newacronym{TEM}{TEM}{scanning electron microscope}
+blabla \gls{TEM}
+
 \cleardoublepage
 
 \chapter{Conclusion}
 
 \cleardoublepage
 \renewcommand{\tocbibname}{Bibliographie / Webographie}
-\bibliography{example} % See example.bib 
+\bibliography{example} % See example.bib
 \bibliographystyle{plain}
 
 \cleardoublepage
@@ -249,8 +253,7 @@ Ceci est une référence bibliographique~\cite{GOT4}.
 \lstlistoflistings
 \cleardoublepage
 
-\chapter*{Glossaire}
-\addcontentsline{toc}{chapter}{Glossaire}
+\printglossaries
 
 \cleardoublepage
 \renewcommand{\thesubsection}{\Roman{subsection}}
