@@ -68,6 +68,9 @@
 \DeclareOption{stage2a}{\booltrue{stage2a}}
 \ProcessOptions
 
+\RequirePackage{glossaries}
+\makeglossaries
+
 \RequirePackage{authblk}
 
 \RequirePackage{xcolor}
@@ -173,7 +176,7 @@
 		{\ifbool{stage2a}
 			{Second year internship done in partnership with \reportCompany{}}
 		    {Final year internship done in partnership with
-    
+
 		    \reportCompany{}
 
 		    in preparation for the engineering diploma of \reportSchool{}}}}
@@ -289,11 +292,11 @@
 		{\ifbool{stage2a}
 			{Second year internship done in partnership with \reportCompany{}}
 		    {Final year internship done in partnership with
-    
+
 		    \reportCompany{}
 
 		    in preparation for the engineering diploma of \reportSchool{}}}}
-    
+
 \vfill
 \end{center}
 

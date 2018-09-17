@@ -10,7 +10,7 @@
 
 \def\reportAuthorAddress{Student's address} % Student's address
 \def\reportAuthorCity{Postal code, CITY} % Student's postal code and city
-\def\reportAuthorPhone{Phone Number} % Student's phone number 
+\def\reportAuthorPhone{Phone Number} % Student's phone number
 
 \def\reportIndustrialSupervisor{Eddard Stark} % Industrial supervisor's name
 \def\reportAcademicSupervisor{Tyrion Lannister} % Academic supervisor's name
@@ -26,7 +26,7 @@
 
 
 \begin{document}
-  
+
 \maketitle
 \pagenumbering{roman}
 
@@ -142,7 +142,7 @@ void CEquation::IniParser()
 		pP->DefineFun("abs", &CEquation::Abs, false);
 		pP->DefineFun("rand", &CEquation::Rand, false);
 		pP->DefineFun("tex", &CEquation::Tex, false);
-	
+
 		pP->DefineVar("x", &XVar);
 		pP->DefineVar("y", &YVar);
 		pP->DefineVar("z", &ZVar);
@@ -239,13 +239,17 @@ Figure~\ref{fig:logo-tn} represents \reportSchool{}'s logo.
 
 This is a bibliography reference~\cite{GOT4}.
 
+Glossaries:
+\newacronym{TEM}{TEM}{scanning electron microscope}
+blabla \gls{TEM}
+
 \cleardoublepage
 
 \chapter{Conclusion}
 
 \cleardoublepage
 
-\bibliography{example} % See example.bib 
+\bibliography{example} % See example.bib
 \bibliographystyle{plain}
 
 \cleardoublepage
@@ -259,8 +263,7 @@ This is a bibliography reference~\cite{GOT4}.
 \lstlistoflistings
 \cleardoublepage
 
-\chapter*{Glossary}
-\addcontentsline{toc}{chapter}{Glossary}
+\printglossaries
 \cleardoublepage
 
 \begin{appendices}
