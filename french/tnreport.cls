@@ -64,6 +64,8 @@
 \DeclareOption{pi}{\booltrue{pi}}
 \newbool{stage2a}
 \DeclareOption{stage2a}{\booltrue{stage2a}}
+\newbool{stage1a}
+\DeclareOption{stage1a}{\booltrue{stage1a}}
 \ProcessOptions
 
 \RequirePackage{authblk}
@@ -135,10 +137,13 @@
   {\ifbool{pi}
     {\def\reportType{Projet industriel}
         \def\reportSchoolDiplomaYear{3}}
-	{\ifbool{stage2a}
-		{\def\reportType{Rapport de stage}
-			\def\reportSchoolDiplomaYear{2}}
-		{\def\reportType{Mémoire d'ingénieur}}}}
+	{\ifbool{stage1a}
+		{\def\reportType{Rapport de stage 1A}
+			\def\reportSchoolDiplomaYear{1}}
+		{\ifbool{stage2a}
+			{\def\reportType{Rapport de stage}
+				\def\reportSchoolDiplomaYear{2}}
+			{\def\reportType{Mémoire d'ingénieur}}}}}
 
 \makeatletter
 \def\maketitle{%
@@ -175,11 +180,13 @@
   {\reportProjectCustomer{}}
   {\ifbool{pi}
     {\reportIndustrialCustomer{}}
-	{\ifbool{stage2a}
-		{Stage de deuxième année réalisé dans l'entreprise \reportCompany{}}
-		{Stage de fin d'études réalisé dans l'entreprise \reportCompany{}
+	{\ifbool{stage1a}
+		{Stage de première année réalisé dans l'entreprise \reportCompany{}}
+		{\ifbool{stage2a}
+			{Stage de deuxième année réalisé dans l'entreprise \reportCompany{}}
+			{Stage de fin d'études réalisé dans l'entreprise \reportCompany{}
 
-		en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}}}}
+		en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}}}}}
 
 \vfill
 \vfill
@@ -193,9 +200,11 @@
     {Encadrant industriel : \reportSupervisor{}
 
         Encadrant académique : \reportAcademicSupervisor{}}
-    {Maître de stage : \reportIndustrialSupervisor{}
+    {\ifbool{stage1a}
+    	{Maître de stage : \reportIndustrialSupervisor{}}
+    	{Maître de stage : \reportIndustrialSupervisor{}
 
-        Encadrant universitaire : \reportAcademicSupervisor{}}}
+        Encadrant universitaire : \reportAcademicSupervisor{}}}}
 
 \cleardoublepage
 \setcounter{page}{1}
@@ -289,11 +298,13 @@
   {\reportProjectCustomer{}}
   {\ifbool{pi}
     {\reportIndustrialCustomer{}}
-	{\ifbool{stage2a}
-		{Stage de deuxième année réalisé dans l'entreprise \reportCompany{}}
-		{Stage de fin d'études réalisé dans l'entreprise \reportCompany{}
+	{\ifbool{stage1a}
+		{Stage de première année réalisé dans l'entreprise \reportCompany{}}
+		{\ifbool{stage2a}
+			{Stage de deuxième année réalisé dans l'entreprise \reportCompany{}}
+			{Stage de fin d'études réalisé dans l'entreprise \reportCompany{}
 
-		en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}}}}
+			en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}}}}}
 
 \vfill
 \end{center}
@@ -334,9 +345,11 @@
     {Encadrant industriel : \reportSupervisor{}
 
       Encadrant académique : \reportAcademicSupervisor{}}
-  {Maître de stage : \reportIndustrialSupervisor{}
+  {\ifbool{stage1a}
+    	{Maître de stage : \reportIndustrialSupervisor{}}
+    	{Maître de stage : \reportIndustrialSupervisor{}
 
-    Encadrant universitaire : \reportAcademicSupervisor{}}}
+        Encadrant universitaire : \reportAcademicSupervisor{}}}}
 
 \cleardoublepage
 }
