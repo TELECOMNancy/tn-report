@@ -1,6 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 
-\ProvidesClass{tnreport}[2015/03/13 TELECOM Nancy Master Thesis, v0.2]
+\ProvidesClass{tnreport}[2019/07/01 TELECOM Nancy Master Thesis, v0.3]
 
 \LoadClass[a4paper,twoside,12pt]{report}
 
@@ -138,7 +138,7 @@
     {\def\reportType{Projet industriel}
         \def\reportSchoolDiplomaYear{3}}
 	{\ifbool{stage1a}
-		{\def\reportType{Rapport de stage 1A}
+		{\def\reportType{Compte rendu d’expérience en entreprise}
 			\def\reportSchoolDiplomaYear{1}}
 		{\ifbool{stage2a}
 			{\def\reportType{Rapport de stage}
