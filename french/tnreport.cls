@@ -118,7 +118,7 @@
 \def\reportCompanyAddress{numéro, rue} % Rue de l'entreprise
 \def\reportCompanyCity{code postal, VILLE} % Ville de l'entreprise
 \def\reportCompanyPhone{téléphone} % Téléphone de l'entreprise
-%\def\reportCompanyLogoPath{figures/anonymous_company-logo} % Logo de l'entreprise
+\def\reportCompanyLogoPath{figures/anonymous_company-logo} % Logo de l'entreprise
 \def\reportSchool{TELECOM Nancy} % Nom de l'école
 \def\reportSchoolAddress{193 avenue Paul Muller} % Rue de l'école
 \def\reportSchoolCity{CS 90172, VILLERS-L\`ES-NANCY} % Ville de l'école
@@ -235,7 +235,7 @@
 
   {\bf Nom, prénom : #1}
 
-  {\bf \'Elève-ingénieur(e) régulièrement inscrit(e) en \reportSchoolDiplomaYear{}\up{e} année à \reportSchool{}}
+  {\bf \'Elève-ingénieur(e) régulièrement inscrit(e) en \reportSchoolDiplomaYear{}\textsuperscript{e} année à \reportSchool{}} % \up should not be used as it is a custom internal command from french babel package which is not guaranted by the package
 
   {\bf Numéro de carte de l'étudiant(e) :} #2
 
