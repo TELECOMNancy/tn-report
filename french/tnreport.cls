@@ -1,20 +1,21 @@
 \NeedsTeXFormat{LaTeX2e}
 
-\ProvidesClass{tnreport}[2019/07/01 TELECOM Nancy Master Thesis, v0.3]
+\ProvidesClass{tnreport}[2019/07/01 TELECOM Nancy Master Thesis, v0.4]
 
 \LoadClass[a4paper,twoside,12pt]{report}
 
+
+%%Packages%%
+
 \RequirePackage{graphicx}
-\RequirePackage[francais]{babel}
+\RequirePackage[french]{babel} %option francais is deprecated
 \RequirePackage{amsfonts,amssymb,amsmath,mathtools}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
-%\RequirePackage{times}
 \RequirePackage{libertine}
-%\RequirePackage{newtxtext}
 \RequirePackage[libertine]{newtxmath}
 
-\RequirePackage[svgnames]{xcolor}
+\RequirePackage[svgnames,table]{xcolor} %table option is usefull when coloring rows in tabular
 \RequirePackage{listings}
 
 \lstset{ %
@@ -44,20 +45,26 @@
 \RequirePackage[a4paper]{geometry}
 \geometry{top=2cm, bottom=2cm,right=2cm,left=2.5cm}
 
-\RequirePackage[colorlinks,linkcolor=black,citecolor=black,pagebackref]{hyperref}
+
+\RequirePackage{authblk}
+\RequirePackage[chapter]{tocbibind}
+\RequirePackage{xcolor}
+\RequirePackage{tabularx}
+\RequirePackage{titlesec}
+\RequirePackage[colorlinks,linkcolor=black,citecolor=black,pagebackref,linktocpage=true]{hyperref}
 \RequirePackage{acronym}
-
-\newcommand{\email}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
-\newcommand{\universityYear}[1]{\the\numexpr #1 - 1 \relax--\the#1}
-
-\RequirePackage{draftwatermark}
-\@sc@wm@stampfalse
-\SetWatermarkText{Confidentiel}
-\SetWatermarkScale{.8}
-\DeclareOption{confidential}{\@sc@wm@stamptrue}
-\ProcessOptions
-
 \RequirePackage{etoolbox}
+
+%\RequirePackage{glossaries}
+\RequirePackage{glossaries-extra} %use this instead of the previous for better looking glossaries
+\makeglossaries
+
+
+%%Options%%
+
+\newbool{watermark}
+\boolfalse{watermark}
+\DeclareOption{confidential}{\booltrue{watermark}}
 \newbool{pidr}
 \DeclareOption{pidr}{\booltrue{pidr}}
 \newbool{pi}
@@ -68,21 +75,25 @@
 \DeclareOption{stage1a}{\booltrue{stage1a}}
 \ProcessOptions
 
-\RequirePackage{authblk}
+
+%only loads the draftwatermark package if it is needed, also suppress the warning about double \ProcessOptions
+\ifbool{watermark}{\RequirePackage[text=Confidentiel,scale=0.8]{draftwatermark}}{}
+
+
+%%custom commands%%
+
+\newcommand{\email}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
+\newcommand{\universityYear}[1]{\the\numexpr #1 - 1 \relax--\the#1}
+%\newcommand{\universityYear}[1]{\the\numexpr #1}
+%if you need want only on year to display, use second line and comment the first one
 
 \addto\captionsfrench{%
   \renewcommand\listfigurename{Liste des illustrations}}
 
-\RequirePackage{glossaries}
-\makeglossaries
 
-
-\RequirePackage{xcolor}
-\RequirePackage{titlesec}
 \titleformat{\chapter}
   {\normalfont\LARGE\bfseries}{\thechapter}{1em}{}
 
-\usepackage[chapter]{tocbibind}
 
 \setlength{\parindent}{0pt}
 \parskip 10pt
@@ -90,10 +101,6 @@
 \def\includeCompanyLogo{%
   \@ifundefined{reportCompanyLogoPath}{}{\includegraphics[height=6em]{\reportCompanyLogoPath}}
 }
-
-%\def\reportAuthorFirstName{Prénom} % Prénom de l'élève
-%\def\reportAuthorLastName{Nom} % Nom de l'élève
-%\def\reportStudentId{XXXXXXXX} % Numéro de carte d'étudiant de l'élève
 
 
 \def\reportAuthor{Nom Prénom}
@@ -145,15 +152,17 @@
 				\def\reportSchoolDiplomaYear{2}}
 			{\def\reportType{Mémoire d'ingénieur}}}}}
 
+%%title definition%%
+
 \makeatletter
 \def\maketitle{%
 \pagestyle{empty}
 \begin{center}
-\includegraphics[width=4.5cm]{figures/school-logo}
-\hspace{9mm}
+\includegraphics[width=4cm]{figures/school-logo}%images looks better width those customs parameters
+\hspace{12mm}
 \includegraphics[width=4.5cm]{figures/collegium-logo}
-\hspace{9mm}
-\includegraphics[width=4.5cm]{figures/university-logo}
+\hspace{6mm}
+\includegraphics[width=5cm]{figures/university-logo}
 
 \vfill
 
@@ -188,7 +197,6 @@
 
 		en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}}}}}
 
-\vfill
 \vfill
 
 \end{center}
@@ -328,14 +336,12 @@
 \email{\reportSchoolEmail}\\
 \smallskip
 
-\begin{tabular}{@{}lr@{}}
-\parbox[b]{.7\linewidth}{
-\reportCompany{} \\
-\reportCompanyAddress{} \\
-\reportCompanyCity{} \\
-\reportCompanyPhone{} \\
-} & \includeCompanyLogo{} \\
-\end{tabular}
+
+\reportCompany{}\\
+\reportCompanyAddress{}\\
+\reportCompanyCity{}\\
+\reportCompanyPhone{}  \hfill\smash{\raisebox{-0.5\normalbaselineskip}{\includeCompanyLogo{}}}%maybe you will need to modifie this line to suites better to the compagny logo size
+
 
 \medskip
 
