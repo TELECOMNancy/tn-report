@@ -155,7 +155,7 @@
 \hspace{12mm}
 \includegraphics[width=4.5cm]{figures/collegium-logo}
 \hspace{6mm}
-\includegraphics[width=5cm]{figures/university-logo
+\includegraphics[width=5cm]{figures/university-logo}
 \vfill
 
 {\fontsize{40}{40}\selectfont \reportType{}}
@@ -189,7 +189,7 @@
 
 		    in preparation for the engineering diploma of \reportSchool{}}}}
 
-\vfilll
+\vfill
 
 \end{center}
 
