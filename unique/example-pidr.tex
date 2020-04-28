@@ -1,0 +1,324 @@
+\documentclass[pidr]{tnreport}
+%\documentclass[confidential,pidr]{tnreport} % If you are writing confidential report
+
+\def\reportTitle{Winter is Coming} % Titre du mémoire
+\def\reportLongTitle{Winter is Coming -- You know nothing Jon Snow} % Titre plus long du mémoire
+
+\def\reportAuthor{Jon Snow\\ Samwell Tarly}
+\def\reportAuthorEmail{\email{jon@castleblack.com}\\ \email{tarly@casteblack.com}} % Courriel de l'élève
+
+\def\reportSupervisor{Eddard Stark} % Prénom Nom de l'encadrant industriel
+
+\def\reportCompany{Home Box Office} % Nom de l'entreprise d'accueil
+\def\reportCompanyAddress{numéro, rue}  % Adresse de l'entreprise
+\def\reportCompanyCity{code postal, VILLE} % Adresse (cont.) de l'entreprise
+\def\reportCompanyPhone{téléphone} % Téléphone de l'entreprise
+\def\reportCompanyLogoPath{figures/anonymous_company-logo} % Logo de l'entreprise -- comment this definition to remove company logo
+
+\def\place{Winterfell} % Ville pour la signature pour l'engagement anti-plagiat
+\def\date{\today} % Date pour la signature de l'engagement anti-plagiat
+
+\def\reportProjectCustomer{Projet réalisé pour l'équipe Night's Watch du laboratoire HBO}
+
+\begin{document}
+
+\maketitle
+\pagenumbering{roman}
+
+\insertAntiPlagiarismAgreement{Snow, Jon}{2014041022}
+\insertAntiPlagiarismAgreement{Tarly, Samwell}{2014031142}
+
+\cleardoublepage
+
+\makesecondtitle
+
+\section*{Remerciements}
+\addcontentsline{toc}{chapter}{Remerciements}
+
+{\em
+``Night gathers, and now my watch begins. \\
+It shall not end until my death.
+
+I shall take no wife, hold no lands, father no children. \\
+I shall wear no crowns and win no glory. \\
+I shall live and die at my post.
+
+I am the sword in the darkness. \\
+I am the watcher on the walls. \\
+I am the shield that guards the realms of men.
+
+I pledge my life and honor to the Night's Watch, \\
+for this night and all the nights to come.''
+}
+
+\hspace{4cm} -- The Night's Watch oath
+
+
+\cleardoublepage
+
+\section*{Avant-propos (optionnel)}
+\addcontentsline{toc}{chapter}{Avant-propos (optionnel)}
+
+
+\cleardoublepage
+
+\renewcommand{\baselinestretch}{0.5}\normalsize
+\tableofcontents
+\renewcommand{\baselinestretch}{1.0}\normalsize
+\cleardoublepage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\chapter{Introduction}
+
+Never resting pride and purpose, in his cups, sed do ever vigilant incididunt
+ut labore et dolore magna servant. Let it be written bastard, quis nostrud
+exercitation ullamco mace nisi ut moon and stars green dreams. Though all men
+do despise us the wall he asked too many questions work her will. Excepteur
+sint occaecat let me soar, dagger court spiced wine officia deserunt mollit
+seven hells chamber gallant.
+
+Curabitur pretium tincidunt lacus. Tread lightly here mulled wine. Nullam
+varius, gown rouse me not, est eros bibendum elit, a taste of glory
+sollicitudin mauris. Death before disgrace gargoyles nibh euismod joust. None
+so wise we light the way. Suckling pig risus a elit. Mare's milk. Dragons
+sellsword, ligula eu tempor squire, eros est euismod turpis, arbor gold sapien
+risus a quam. Ours is the fury. Night's watch. Pellentesque malesuada nulla
+honeyed locusts. Honed and ready, the seven, greyscale eget, your grace, dirk.
+Ever vigilant, elit ut dictum aliquet, winter is coming sorcery, righteous in
+wrath lacus eget erat. Blood mollis maegi nunc. Summerwine arcu. Dagger
+consequat. In his cups, feast ironborn, tunic crimson, spiced wine, whore.
+Moon and stars, mollis quis, the wall, holdfast maester, orci. Old bear seven
+hells dictumst.
+
+\cleardoublepage
+
+\chapter{Présentation de l'entreprise}
+
+Moon-flower juice, craven pride and purpose, mulled wine suscipit mauris, gown
+trencher take the black risus. In convallis tellus a mauris. Milk of the poppy
+none so fierce. Work her will. Never resting arbor gold. Gallant hac lord of
+light. Baseborn facilisis diam at odio. Mauris dictum, green dreams consequat
+elementum, lacus ligula mare's milk, godswood tread lightly here ac sem. Donec
+turpis. Lamprey tourney crypt. Your grace lance eu mauris. Quisque gravida
+ipsum non fire. Beware our sting, scelerisque vitae, motley dagger, lobortis
+ac, chamber. Aliquam spiced wine risus. The seven let me soar. Etiam death
+before disgrace. Suspendisse odio. Gallant fleet. Our sun shines bright.
+
+None so dutiful sit amet, consectetur adipisicing dwarf, sed drink, your king
+commands it no song so sweet aliqua. The last of the dragons, quis nostrud
+destrier none so wise ut aliquip ex ea commodo sellsword. Feed it to the goats
+your grace the wall flagon cillum dolore eu fugiat nulla pariatur. Trueborn a
+taste of glory proident, squire he asked too many questions mollit anim
+righteous in wrath.
+
+\cleardoublepage
+
+\chapter{Exemples Listings}
+
+Il est aisé d'insérer du code dans un rapport. Il suffit de définir le langage, la légende à afficher et enfin un Label pour pouvoir y faire référence. Le résultat est donnée dans le listing \ref{lst:premierExemple}. Il est également possible de changer les couleurs, pour cela il faut éditer le lstset dans la classe tnreport.cls.
+
+\begin{lstlisting}[language=c++, caption={Premier Exemple}, label={lst:premierExemple}]
+void CEquation::IniParser()
+{
+	if (!pP){ //if not already initialized...
+		pP = new mu::Parser;
+
+		pP->DefineOprt("%", CEquation::Mod, 6); //deprecated
+		pP->DefineFun("mod", &CEquation::Mod, false);
+		pP->DefineOprt("&", AND, 1); //DEPRECATED
+		pP->DefineOprt("and", AND, 1);
+		pP->DefineOprt("|", OR, 1); //DEPRECATED
+		pP->DefineOprt("or", OR, 1);
+		pP->DefineOprt("xor", XOR, 1);
+		pP->DefineInfixOprt("!", NOT);
+		pP->DefineFun("floor", &CEquation::Floor, false);
+		pP->DefineFun("ceil", &CEquation::Ceil, false);
+		pP->DefineFun("abs", &CEquation::Abs, false);
+		pP->DefineFun("rand", &CEquation::Rand, false);
+		pP->DefineFun("tex", &CEquation::Tex, false);
+
+		pP->DefineVar("x", &XVar);
+		pP->DefineVar("y", &YVar);
+		pP->DefineVar("z", &ZVar);
+	}
+}
+\end{lstlisting}
+\clearpage
+Il est également possible d'afficher du code directement depuis un fichier source, le résultat de cette opération est visible dans le listing \ref{lst:fromSrc}
+\lstinputlisting[language=c++,caption={Affichage depuis le fichier source},label={lst:fromSrc}]{figures/sourceCode.cpp}
+
+De nombreux languages sont supportés : \\
+ABAP2,4, ACSL, Ada4, Algol4, Ant, Assembler2,4, Awk4, bash, Basic2,4, C\#5, C++4, C4, Caml4, Clean, Cobol4, Comal, csh, Delphi, Eiffel, Elan, erlang, Euphoria, Fortran4, GCL, Gnuplot, Haskell, HTML, IDL4, inform, Java4, JVMIS, ksh, Lisp4, Logo, Lua2, make4, Mathematica1,4, Matlab, Mercury, MetaPost, Miranda, Mizar, ML, Modelica3, Modula-2, MuPAD, NASTRAN, Oberon-2, Objective C5 , OCL4, Octave, Oz, Pascal4, Perl, PHP, PL/I, Plasm, POV, Prolog, Promela, Python, R, Reduce, Rexx, RSL, Ruby, S4, SAS, Scilab, sh, SHELXL, Simula4, SQL, tcl4, TeX4, VBScript, Verilog, VHDL4, VRML4, XML, XSLT.
+\clearpage
+Il est néanmoins possible de définir le sien, il faudra alors ajouter dans la classe tnreport.cls du code resemblant au listing \ref{lst:defLang}. On y définit les différents mots-clés, ainsi que les délimiteurs des chaines de caractère et des commentaires.
+\begin{lstlisting}[language=Tex, caption={Syntaxe définition d'un langage}, label={lst:defLang}]
+\lstdefinelanguage{amf}
+{keywords=
+  {
+    xml,
+    amf,
+    volume,
+    material,
+    coordinates,
+    vertices,
+    vertex,
+    triangle,
+    x,
+    y,
+    z,
+    v1,
+    v2,
+    v3,
+    mesh,
+    object,
+    constellation,
+    metadata,
+    color,
+    texmap,
+    texture,
+    utex1,
+    utex2,
+    utex3,
+    instance,
+    deltax,
+    deltay,
+    deltaz,
+    r,
+    g,
+    b,
+    rx,
+    ry,
+    rz,
+    composite
+  },
+  sensitive=false,
+  morestring=[b]",
+  comment=[s]{<!--}{-->}
+}
+\end{lstlisting}
+\cleardoublepage
+
+\chapter{Autre chapitre}
+
+\section{Autre section}
+
+Green dreams none so dutiful, tread lightly here, sed do spearwife mulled wine
+sandsilk labore et dolore magna aliqua. Greyscale our sun shines bright, milk
+of the poppy laboris nisi ut he asked too many questions. Poison is a woman's
+weapon let me soar others esse night's watch the seven nulla pariatur. Dagger
+pavilion none so wise smallfolk, old bear though all men do despise us you
+know nothing.
+
+
+\subsection{Première sous-section}
+
+\subsubsection{Première sous-sous section}
+
+Exemple d'illustration :
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=10cm]{figures/school-logo}
+  \caption{Logo de TELECOM Nancy}
+  \label{fig:logo-tn}
+\end{figure}
+
+La Figure~\ref{fig:logo-tn} représente le logo de \reportSchool{}.
+
+Ceci est une référence bibliographique~\cite{GOT4}.
+
+Entrée dans le glossaire:
+\newacronym{TEM}{TEM}{scanning electron microscope}
+blabla \gls{TEM}
+
+\cleardoublepage
+
+\chapter{Conclusion}
+
+\cleardoublepage
+\renewcommand{\tocbibname}{Bibliographie / Webographie}
+\bibliography{example} % See example.bib
+\bibliographystyle{plain}
+
+\cleardoublepage
+
+\listoffigures
+\cleardoublepage
+
+\listoftables
+\cleardoublepage
+
+\lstlistoflistings
+\cleardoublepage
+
+\printglossaries
+
+\cleardoublepage
+\renewcommand{\thesubsection}{\Roman{subsection}}
+
+\appendix
+\part*{Annexes}
+\addcontentsline{toc}{part}{Annexes}
+\cleardoublepage
+
+\chapter{Première Annexe}
+\cleardoublepage
+
+\chapter{Seconde Annexe}
+
+
+\cleardoublepage
+\thispagestyle{empty}
+
+\section*{Résumé}
+\addcontentsline{toc}{chapter}{Résumé}
+
+No foe may pass amet, sun green dreams, none so dutiful no song so sweet et
+dolore magna aliqua. Ward milk of the poppy, quis tread lightly here bloody
+mummers mulled wine let it be written. Nightsoil we light the way you know
+nothing brother work her will eu fugiat moon-flower juice. Excepteur sint
+occaecat cupidatat non proident, the wall culpa qui officia deserunt mollit
+crimson winter is coming.
+
+Moon and stars lacus. Nulla gravida orci a dagger. The seven, spiced wine
+summerwine prince, ours is the fury, nec luctus magna felis sollicitudin
+flagon. As high as honor full of terrors. He asked too many questions arbor
+gold. Honeyed locusts in his cups. Mare's milk. Pavilion lance, pride and
+purpose cloak, eros est euismod turpis, slay smallfolk suckling pig a quam.
+Our sun shines bright. Green dreams. None so fierce your grace. Righteous in
+wrath, others mace, commodo eget, old bear, brothel. Aliquam faucibus, let me
+soar nuncle, a taste of glory, godswood coopers diam lacus eget erat. Night's
+watch the wall. Trueborn ironborn. Never resting. Bloody mummers chamber,
+dapibus quis, laoreet et, dwarf sellsword, fire. Honed and ready, mollis maid,
+seven hells, manhood in, king. Throne none so wise dictumst.
+
+{\bf Mots-clés :}
+
+
+\section*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+Green dreams mulled wine. Feed it to the goats. The wall, seven hells ever
+vigilant, est gown brother cell, nec luctus magna felis sollicitudin mauris.
+Take the black we light the way. Honeyed locusts ours is the fury smallfolk.
+Spare me your false courtesy. The seven. Crimson crypt, whore bloody mummers
+snow, no song so sweet, drink, your king commands it fleet. Raiders fermentum
+consequat mi. Night's watch. Pellentesque godswood nulla a mi. Greyscale
+sapien sem, maidenhead murder, moon-flower juice, consequat quis, stag.
+Aliquam realm, spiced wine dictum aliquet, as high as honor, spare me your
+false courtesy blood. Darkness mollis arbor gold. Nullam arcu. Never resting.
+Sandsilk green dreams, mulled wine, betrothed et, pretium ac, nuncle. Whore
+your grace, mollis quis, suckling pig, clansmen king, half-man. In hac
+baseborn old bear.
+
+Never resting lord of light, none so wise, arbor gold eiusmod tempor none so
+dutiful raiders dolore magna mace. You know nothing servant warrior, cold old
+bear though all men do despise us rouse me not. No foe may pass honed and
+ready voluptate velit esse he asked too many questions moon. Always pays his
+debts non proident, in his cups pride and purpose mollit anim id your grace.
+
+{\bf Keywords :}
+
+\end{document}
