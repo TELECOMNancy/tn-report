@@ -1,6 +1,8 @@
 \documentclass{tnreport}
+%\documentclass[stage1a]{tnreport} % If you are in 1nd year
 %\documentclass[stage2a]{tnreport} % If you are in 2nd year
 %\documentclass[confidential]{tnreport} % If you are writing confidential report
+%\documentclass[english]{tnreport} % If you are writing your report in english
 
 \def\reportTitle{Winter is Coming} % Titre du mémoire
 \def\reportLongTitle{Winter is Coming -- You know nothing Jon Snow} % Titre plus long du mémoire
@@ -8,12 +10,21 @@
 \def\reportAuthor{Jon Snow}
 \def\reportAuthorEmail{\email{jon@castleblack.com}} % Courriel de l'élève
 
+% This is an example, for a report with several students as authors
+%\def\reportAuthor{Jon Snow\\ Samwell Tarly}
+%\def\reportAuthorEmail{\email{jon@castleblack.com}\\ \email{tarly@casteblack.com}} % Courriel de l'élève
+
 \def\reportAuthorAddress{numéro, rue} % Adresse de l'élève
 \def\reportAuthorCity{code postal, VILLE} % Adresse (cont.) de l'élève
 \def\reportAuthorPhone{téléphone} % Téléphone de l'élève
 
-\def\reportIndustrialSupervisor{Eddard Stark} % Prénom Nom de l'encadrant industriel
+%\def\reportIndustrialSupervisor{Eddard Stark} % Prénom Nom de l'encadrant industriel
+\def\reportSupervisor{Eddard Stark} % Prénom Nom de l'encadrant industriel (en entreprise ou laboratoire)
 \def\reportAcademicSupervisor{Tyrion Lannister} % Prénom Nom de l'encadrant académique
+
+% For PIDR ?
+%\def\reportSupervisor{Eddard Stark} % Prénom Nom de l'encadrant industriel
+%\def\reportProjectCustomer{Projet réalisé pour l'équipe Night's Watch du laboratoire HBO}
 
 \def\reportCompany{Home Box Office} % Nom de l'entreprise d'accueil
 \def\reportCompanyAddress{numéro, rue}  % Adresse de l'entreprise
@@ -31,6 +42,9 @@
 \pagenumbering{roman}
 
 \insertAntiPlagiarismAgreement{Snow, Jon}{2014041022}
+
+% You may insert several agreement in case of multiple authors
+%\insertAntiPlagiarismAgreement{Tarly, Samwell}{2014031142}
 
 \cleardoublepage
 

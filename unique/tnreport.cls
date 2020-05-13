@@ -156,8 +156,7 @@
 	
 	\def\reportSchoolDiplomaYear{3} % School Diploma Year
 	
-	\def\reportSupervisor{Supervisor's name} % Supervisor's name for PIDR only
-	\def\reportIndustrialSupervisor{Industrial supervisor's name} % Industrial supervisor's name
+	\def\reportSupervisor{Industrial supervisor's name} % Industrial supervisor's name in company or laboratory
 	\def\reportAcademicSupervisor{Academic supervisor's name} % Academic supervisor's name
 	
 	\def\place{City} % City of signature for the anti-plagiarism agreement
@@ -208,7 +207,7 @@
 	\def\reportSchoolDiplomaYear{3} % Année diplomante
 	
 	\def\reportSupervisor{Prénom Nom} % Prénom Nom de l'encadrant (pour les PIDR uniquement)
-	\def\reportIndustrialSupervisor{Prénom Nom} % Prénom Nom de l'encadrant industriel
+%	\def\reportIndustrialSupervisor{Prénom Nom} % Prénom Nom de l'encadrant industriel
 	\def\reportAcademicSupervisor{Prénom Nom} % Prénom Nom de l'encadrant académique
 	
 	\def\place{Ville} % Ville pour la signature pour l'engagement anti-plagiat
@@ -304,12 +303,12 @@
 
 \ifbool{english}{
 \ifbool{pidr}
-{Encadrant : \reportSupervisor{}}
+{Supervisor : \reportSupervisor{}}
 {\ifbool{pi}
 	{Industrial supervisor: \reportSupervisor{}
 		
 		Academic supervisor: \reportAcademicSupervisor{}}
-	{Internship supervisor: \reportIndustrialSupervisor{}
+	{Internship supervisor: \reportSupervisor{}
 		
 		Academic supervisor: \reportAcademicSupervisor{}}}
 }{
@@ -320,8 +319,8 @@
 
         Encadrant académique : \reportAcademicSupervisor{}}
     {\ifbool{stage1a}
-    	{Maître de stage : \reportIndustrialSupervisor{}}
-    	{Maître de stage : \reportIndustrialSupervisor{}
+    	{Maître de stage : \reportSupervisor{}}
+    	{Maître de stage : \reportSupervisor{}
 
         Encadrant universitaire : \reportAcademicSupervisor{}}}}
 }
@@ -481,7 +480,7 @@
 		{Industrial supervisor: \reportSupervisor{}
 			
 			Academic supervisor: \reportAcademicSupervisor{}}
-		{Internship supervisor: \reportIndustrialSupervisor{}
+		{Internship supervisor: \reportSupervisor{}
 			
 			Academic supervisor: \reportAcademicSupervisor{}}}
 }{
@@ -492,8 +491,8 @@
 
       Encadrant académique : \reportAcademicSupervisor{}}
   {\ifbool{stage1a}
-    	{Maître de stage : \reportIndustrialSupervisor{}}
-    	{Maître de stage : \reportIndustrialSupervisor{}
+    	{Maître de stage : \reportSupervisor{}}
+    	{Maître de stage : \reportSupervisor{}
 
         Encadrant universitaire : \reportAcademicSupervisor{}}}}
 }
