@@ -1,13 +1,20 @@
-Master Thesis Template for LaTeX
+TELECOM Nancy Master Thesis/Project Report Template for LaTeX
 =========
 
-This is a very basic LaTeX template provided by [TELECOM Nancy](http://www.telecomnancy.eu) for Master thesis, internship and PIDR report.
+This is a very basic LaTeX template provided by [TELECOM Nancy](http://www.telecomnancy.eu) for Master thesis, internship and project report.
 
 Usage
 ----
 
-Make a copy of the provided sample latex document called `example-report.tex`, `example-report-1A.tex` or `example-pidr.tex`.
+Make a copy of the provided sample latex document called `example-report.tex` or`example-report-1A.tex`.
 Edit the different properties (author, title, figures, etc.). Add your references in the provided `example.bib` file (or add your own file).
+
+The document class provides few options:
+- `english` for report/thesis written in english
+- `stage1a` and `stage2a` for a first and second year internship report
+- `confidential` for confidential report (a watermark is added on every page)
+- `pidr` for interdisciplinary project - **`[DEPRECATED]`** since these reports should not comply anymore to this template -
+
 
 Contributing
 ------------
