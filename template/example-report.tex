@@ -31,6 +31,7 @@
 \def\reportCompanyCity{code postal, VILLE} % Adresse (cont.) de l'entreprise
 \def\reportCompanyPhone{téléphone} % Téléphone de l'entreprise
 \def\reportCompanyLogoPath{figures/anonymous_company-logo} % Logo de l'entreprise -- comment this definition to remove company logo
+%\def\reportSecondCompanyLogoPath{figures/logo.png} % Deuxième logo d'entreprise si besoin
 
 \def\place{Winterfell} % Ville pour la signature pour l'engagement anti-plagiat
 \def\date{\today} % Date pour la signature de l'engagement anti-plagiat
@@ -41,8 +42,8 @@
 \maketitle
 \pagenumbering{roman}
 
-\insertAntiPlagiarismAgreement{Snow, Jon}{2014041022}
-
+\insertAntiPlagiarismAgreement{Snow, Jon}{2014041022}{figures/anonymous_company-logo}{0.2}
+                            % {Nom, Prénom}{n°étu}{image signature}{scale signature} 
 % You may insert several agreement in case of multiple authors
 %\insertAntiPlagiarismAgreement{Tarly, Samwell}{2014031142}
 
