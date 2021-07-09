@@ -127,6 +127,9 @@
 \def\includeCompanyLogo{%
   \@ifundefined{reportCompanyLogoPath}{}{\includegraphics[height=6em]{\reportCompanyLogoPath}}
 }
+\def\includeSecondCompanyLogo{%
+  \@ifundefined{reportSecondCompanyLogoPath}{}{\includegraphics[height=6em]{\reportSecondCompanyLogoPath}}
+}
 
 %below split between langs is mostly cosmetic
 \ifbool{english}{
@@ -333,7 +336,7 @@
 
 
 \makeatletter
-\newcommand\insertAntiPlagiarismAgreement[2]{%
+\newcommand\insertAntiPlagiarismAgreement[4]{%
 
   \begin{center} %Maybe one should makes an english version of this... TODO?
     \Large \bf Déclaration sur l'honneur de non-plagiat
@@ -385,7 +388,15 @@
 
   \hspace{5cm}{\bf Fait à \place{},     le  \date{}}
 
-  \hspace{5cm}{\bf Signature :}
+  \hspace{5cm}\begin{minipage}{0.3\textwidth}
+{\bf Signature :}
+\end{minipage}
+\begin{minipage}{0.6\textwidth}\raggedright
+\includegraphics[scale=#4]{#3}
+\\
+\end{minipage}
+\noindent
+
 \cleardoublepage
 }
 \makeatother
@@ -457,7 +468,7 @@
 \reportAuthorEmail{} \\
 \smallskip
 
-\reportSchool{}\\
+\reportSchool{} \hfill\smash{\raisebox{-0.5\normalbaselineskip}{\includeSecondCompanyLogo{}}}\\
 \reportSchoolAddress{},\\
 \reportSchoolCity{}\\
 \reportSchoolPhone{}\\
@@ -468,7 +479,7 @@
 \reportCompany{}\\
 \reportCompanyAddress{}\\
 \reportCompanyCity{}\\
-\reportCompanyPhone{}  \hfill\smash{\raisebox{-0.5\normalbaselineskip}{\includeCompanyLogo{}}}%maybe you will need to modifie this line to suites better to the compagny logo size
+\reportCompanyPhone{}  \hfill\smash{\raisebox{-0.5\normalbaselineskip}{\includeCompanyLogo{}}}%maybe you will need to modify this line to suites better to the compagny logo size
 
 
 \medskip
