@@ -403,6 +403,31 @@
 
 
 \makeatletter
+\newcommand\insertSupervisorValidationAgreement[2]{%
+  \begin{center}
+    \Large \bf Déclaration sur l'honneur de validation du mémoire d'ingénieur
+  \end{center}
+  \medskip
+  \medskip
+  {\bf Je soussigné(e),}
+  {\bf Nom, prénom : #1}
+  
+  {\bf Encadrant industriel de : #2}
+  Par la présente, je déclare avoir pris connaissance et valider le contenu du mémoire d'ingénieur intitulé :
+  \begin{center}
+    \Large \reportLongTitle{}
+  \end{center}
+  \medskip
+  \medskip
+  \medskip
+  \hspace{5cm}{\bf Fait à \place{},     le  \date{}}
+  \hspace{5cm}{\bf Signature :}
+\cleardoublepage
+}
+\makeatother
+
+
+\makeatletter
 \def\makesecondtitle{%
 \begin{center}
 
