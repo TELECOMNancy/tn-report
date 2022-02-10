@@ -38,6 +38,11 @@
 \boolfalse{pi}
 \DeclareOption{pi}{\booltrue{pi}}
 
+\newbool{contratpro}
+\boolfalse{contratpro}
+\DeclareOption{contratpro}{\booltrue{contratpro}}
+
+
 %lang of the report, default is french
 \newbool{english}
 \boolfalse{english}
@@ -221,18 +226,16 @@
 	\def\reportIndustrialCustomer{Projet réalisé en partenariat avec ENTERPRISE} % intitulé du 'client' du PI
 	
 	\ifbool{pidr}
-	{\def\reportType{Projet interdisciplinaire\newline ou de recherche}
-		\def\reportSchoolDiplomaYear{2}}
+	   {\def\reportType{Projet interdisciplinaire\newline ou de recherche}\def\reportSchoolDiplomaYear{2}}
 	{\ifbool{pi}
-		{\def\reportType{Projet industriel}
-			\def\reportSchoolDiplomaYear{3}}
-		{\ifbool{stage1a}
-			{\def\reportType{Compte rendu d’expérience en entreprise}
-				\def\reportSchoolDiplomaYear{1}}
-			{\ifbool{stage2a}
-				{\def\reportType{Rapport de stage}
-					\def\reportSchoolDiplomaYear{2}}
-				{\def\reportType{Mémoire d'ingénieur}}}}}
+	   {\def\reportType{Projet industriel}\def\reportSchoolDiplomaYear{3}}
+	{\ifbool{stage1a}
+	   {\def\reportType{Compte rendu d’expérience en entreprise}\def\reportSchoolDiplomaYear{1}}
+	{\ifbool{stage2a}
+	   {\def\reportType{Rapport de stage}\def\reportSchoolDiplomaYear{2}}
+    {\ifbool{contratpro}
+	{\def\reportType{Contrat de professionnalisation}\def\reportSchoolDiplomaYear{3}}
+	{\def\reportType{Mémoire d'ingénieur}\def\reportSchoolDiplomaYear{3}}}}}}
 }%end of french defs
 
 
@@ -243,14 +246,14 @@
 \pagestyle{empty}
 \begin{center}
 \includegraphics[width=4cm]{figures/school-logo}%images looks better width those customs parameters
-\hspace{12mm}
-\includegraphics[width=4.5cm]{figures/collegium-logo}
-\hspace{6mm}
+\hspace{22mm}
+\includegraphics[width=3.1cm]{figures/lorraine-inp-logo}
+\hspace{16mm}
 \includegraphics[width=5cm]{figures/university-logo}
 
 \vfill
 
-{\fontsize{40}{40}\selectfont \reportType{}}
+{\fontsize{30}{30}\selectfont \reportType{}}
 
 \rule{\textwidth}{1pt}
 
@@ -406,7 +409,7 @@
 \def\makesecondtitle{%
 \begin{center}
 
-{\fontsize{40}{40}\selectfont \reportType{}}
+{\fontsize{30}{30}\selectfont \reportType{}}
 
 \rule{\textwidth}{1pt}
 
