@@ -80,7 +80,7 @@
 \RequirePackage{acronym}
 
 
-\RequirePackage{glossaries-extra} %use this instead of "glossaries" for better looking glossaries
+\RequirePackage[automake]{glossaries-extra} %use this instead of "glossaries" for better looking glossaries
 \makeglossaries
 
 %only loads the draftwatermark package if it is needed
