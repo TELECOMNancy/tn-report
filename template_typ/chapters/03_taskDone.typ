@@ -6,5 +6,5 @@ Fly living may own god appear days was doesn’t days. Is second bearing. Give l
 
 Exemple d’illustration :
 
-#figure(caption: "Représence le logo de TELECOM Nancy.", image("../figures/logo_tn.jpg", width: 50%))
+#figure(caption: "Représence le logo de TELECOM Nancy.", image("figures/logo_tn.jpg", width: 50%))
 

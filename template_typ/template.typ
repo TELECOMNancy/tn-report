@@ -5,10 +5,10 @@
 #import "chapters/abstract.typ": *
 #import "chapters/contact.typ": *
 #import "chapters/appreciations.typ": *
-
+#import "outline.typ": *
 
 #let project(
-  logo: (ul : "figures/logo_ul.png", tn : "figures/logo_tn.jpg", inp: "figures/logo_inp.png"),
+  logo: (ul : "figures/logo_ul.png", tn : "figures/logo_tn.jpg", inp: "figures/logo_inp.png", company : "figures/logo_inp.png"),
   
   title: "Compte rendu d'expérience en entreprise",
   subtitle: "Winter is coming",
@@ -44,21 +44,19 @@
   set document(title: title)
   set text(font: "Fira Sans", lang: "fr")
   set heading(numbering: none)
-  show outline: set par(leading: 3em)
-  set outline(fill: "") 
   // Title page.
   // The page can contain a logo if you pass one with `logo: "logo.png"`.
  
 
   table(align: center, stroke: none, columns: (auto, auto, auto),
     if logo.tn != none {
-      image(logo.tn, width: 80%)
+      image("chapters/"+logo.tn, width: 80%)
     },
     if logo.inp != none{ 
-      image(logo.inp, width: 80%)
+      image("chapters/"+logo.inp, width: 80%)
     },
     if logo.ul !=none{ 
-      image(logo.ul, width: 80%)
+      image("chapters/"+logo.ul, width: 80%)
     }    
   )
 
@@ -89,7 +87,8 @@
 
   set page(numbering: "i", number-align: center)
   nonPlagiat(
-    authors : (firstName : authors.firstName, lastName : authors.lastName),
+    authors : authors,
+    logo : logo,
     numeroCarte : numeroCarte,
     anneeScolaire : anneeScolaire,
     subtitle: subtitle,
@@ -121,10 +120,10 @@
   pagebreak()
   pagebreak()
   // Table of contents.
-  [
-    = Table des matières
-  ]
-  outline(title: none, depth: 3, indent: true)
+  
+
+
+  custom_outline("Table des matières")
   
   pagebreak()
   
