@@ -14,31 +14,49 @@
 #set page(numbering: "1") 
 
 = Introduction
+// Do not write your text in this document, but in the document dedicated
 #v(50pt)
 #include "chapters/01_introduction.typ"
 #pagebreak()
 #pagebreak()
 
 = Présentation de l'entreprise
+// Do not write your text in this document, but in the document dedicated
 #v(50pt)
 #include "chapters/02_company.typ"
 
 #pagebreak()
 
 = Présentation de la tâche effectuée
+// Do not write your text in this document, but in the document dedicated
 #v(50pt)
 #include "chapters/03_taskDone.typ"
 
 #pagebreak()
 
 = Réflexion
+// Do not write your text in this document, but in the document dedicated
+#v(50pt)
+#include "chapters/04_reflexion.typ"
 
 == Premier sujet
+// Do not write your text in this document, but in the document dedicated
+#v(50pt)
+#include "chapters/04_reflexion_01.typ"
+
 
 == Deuxième sujet
+// Do not write your text in this document, but in the document dedicated
+#v(50pt)
+#include "chapters/04_reflexion_02.typ"
+
 
 #pagebreak()
 = Conclusion
+#v(50pt)
+// Do not write your text in this document, but in the document dedicated
+#include "chapters/05_conclusion.typ"
+
 
 #set heading(numbering: none)
 #pagebreak()
@@ -46,10 +64,25 @@
 #pagebreak()
 
 = Liste des illustrations
+#outline(
+  target: figure.where(kind: image),
+  title : none,
+)
+
 #pagebreak()
+
+
 = Liste des tableaux
+#outline(
+  target : figure.where(kind: table),
+  title : none,
+)
 #pagebreak()
+
+
 = Listings
 #pagebreak()
+
+
 = Glossaire
 #pagebreak()

@@ -1,5 +1,6 @@
 #let nonPlagiat( 
   authors : (firstName : "", lastName : ""),
+  logo : none,
   numeroCarte : none,
   anneeScolaire : none,
   title : none,
@@ -35,7 +36,7 @@ Je suis conscient(e) que le fait de ne pas citer une source ou de ne pas la cite
 
   
   align(center, strong(text("Fait à " + town + ", le " + date + "\n\n\n")))
-  strong(text("                                                      Signature:                                    " + box(image("/figures/logo_inp.png", width: 20%) )))
+  strong(text("                                                      Signature:                                    " + box(image(logo.company, width: 20%) )))
   
 
 }
