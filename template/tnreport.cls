@@ -84,7 +84,7 @@
 \makeglossaries
 
 %only loads the draftwatermark package if it is needed
-\ifbool{watermark}{\RequirePackage{draftwatermark}\SetWatermarkText{Confidentiel}\SetWatermarkScale{.8}}{}
+\ifbool{watermark}{\RequirePackage{draftwatermark}\SetWatermarkText{\ifbool{english}{Classified}{Confidentiel}}\SetWatermarkScale{.8}}{}
 
 \RequirePackage{listings}
 \lstset{ %
