@@ -81,10 +81,10 @@
 
 
 \RequirePackage{glossaries-extra} %use this instead of "glossaries" for better looking glossaries
-\makeglossaries
+\makenoidxglossaries
 
 %only loads the draftwatermark package if it is needed
-\ifbool{watermark}{\RequirePackage[text=Confidentiel,scale=0.8]{draftwatermark}}{}
+\ifbool{watermark}{\RequirePackage{draftwatermark}\SetWatermarkText{\ifbool{english}{Classified}{Confidentiel}}\SetWatermarkScale{.8}}{}
 
 \RequirePackage{listings}
 \lstset{ %
