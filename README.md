@@ -12,6 +12,8 @@ Edit the different properties (author, title, figures, etc.). Add your reference
 The document class provides few options:
 - `english` for report/thesis written in english
 - `stage1a` and `stage2a` for a first and second year internship report
+- `pi` for the third year industrial project report
+- `contratpro` for third year student-apprentice project report
 - `confidential` for confidential report (a watermark is added on every page)
 - `pidr` for interdisciplinary project - **`[DEPRECATED]`** since these reports should not comply anymore to this template -
 

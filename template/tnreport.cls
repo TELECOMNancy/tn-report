@@ -223,7 +223,7 @@
 	
 	\def\reportProjectCustomer{Projet réalisé pour l'équipe XYZ du laboratoire DUMMY} % intitulé du 'client' du PIDR
 	
-	\def\reportIndustrialCustomer{Projet réalisé en partenariat avec ENTERPRISE} % intitulé du 'client' du PI
+	\def\reportIndustrialCustomer{Projet réalisé en partenariat avec \reportCompany{}} % intitulé du 'client' du PI
 	
 	\ifbool{pidr}
 	   {\def\reportType{Projet interdisciplinaire\newline ou de recherche}\def\reportSchoolDiplomaYear{2}}
