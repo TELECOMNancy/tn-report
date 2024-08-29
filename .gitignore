@@ -9,6 +9,7 @@
 *.bcf
 *.blg
 *.dvi
+*.fls
 *.fdb_latexmk
 *.glg
 *.glo
@@ -19,6 +20,7 @@
 *.ist
 *.lof
 *.log
+*.lol
 *.lot
 *.maf
 *.mtc
