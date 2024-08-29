@@ -1,6 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 
-\ProvidesClass{tnreport}[2020/04/28 TELECOM Nancy Master Thesis, v1.0] 
+\ProvidesClass{tnreport}[2020/04/28 TELECOM Nancy Master Thesis, v1.0]
 
 
 \LoadClass[a4paper,twoside,12pt]{report} %Base Class on which the whole template is constructed
@@ -88,27 +88,27 @@
 
 \RequirePackage{listings}
 \lstset{ %
-  backgroundcolor=\color{white},   % choose the background color
-  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
-  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
-  breaklines=true,                 % sets automatic line breaking
-  captionpos=b,                    % sets the caption-position to bottom
-  commentstyle=\color{Orange},    % comment style
-  extendedchars=false,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
-  frame=single,                    % adds a frame around the code
-  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
-  keywordstyle=\color{DarkOrchid},       % keyword style
-  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
-  numbersep=5pt,                   % how far the line-numbers are from the code
-  numberstyle=\tiny\color{DarkGray}, % the style that is used for the line-numbers
-  rulecolor=\color{DarkGray},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
-  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
-  showstringspaces=false,          % underline spaces within strings only
-  showtabs=false,                  % show tabs within strings adding particular underscores
-  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
-  stringstyle=\color{DarkGreen},     % string literal style
-  tabsize=2,                     % sets default tabsize to 2 spaces
-  %title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+	backgroundcolor=\color{white},   % choose the background color
+	basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+	breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+	breaklines=true,                 % sets automatic line breaking
+	captionpos=b,                    % sets the caption-position to bottom
+	commentstyle=\color{Orange},    % comment style
+	extendedchars=false,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+	frame=single,                    % adds a frame around the code
+	keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+	keywordstyle=\color{DarkOrchid},       % keyword style
+	numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+	numbersep=5pt,                   % how far the line-numbers are from the code
+	numberstyle=\tiny\color{DarkGray}, % the style that is used for the line-numbers
+	rulecolor=\color{DarkGray},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+	showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+	showstringspaces=false,          % underline spaces within strings only
+	showtabs=false,                  % show tabs within strings adding particular underscores
+	stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+	stringstyle=\color{DarkGreen},     % string literal style
+	tabsize=2,                     % sets default tabsize to 2 spaces
+	%title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
 }
 
 
@@ -123,34 +123,34 @@
 
 
 \titleformat{\chapter}
-  {\normalfont\LARGE\bfseries}{\thechapter}{1em}{}
+{\normalfont\LARGE\bfseries}{\thechapter}{1em}{}
 
 
 \setlength{\parindent}{0pt}
 \parskip 10pt
 
 \def\includeCompanyLogo{%
-  \@ifundefined{reportCompanyLogoPath}{}{\includegraphics[height=6em]{\reportCompanyLogoPath}}
+	\@ifundefined{reportCompanyLogoPath}{}{\includegraphics[height=6em]{\reportCompanyLogoPath}}
 }
 \def\includeSecondCompanyLogo{%
-  \@ifundefined{reportSecondCompanyLogoPath}{}{\includegraphics[height=6em]{\reportSecondCompanyLogoPath}}
+	\@ifundefined{reportSecondCompanyLogoPath}{}{\includegraphics[height=6em]{\reportSecondCompanyLogoPath}}
 }
 
 %below split between langs is mostly cosmetic
 \ifbool{english}{
 	%true means english
-	
+
 	\def\reportAuthor{Your name}
-	
+
 	\def\reportAuthorAddress{Your address}
 	\def\reportAuthorCity{postal code, CITY} % Author city and postal code
 	\def\reportAuthorPhone{Your phone number} % Author phone number
 	\def\reportAuthorEmail{\email{Your mailing address}} % Author Email
-	
+
 	\def\reportTitle{Internship title} % Internship title
 	\def\reportLongTitle{\reportTitle{}} % Long internship title
 	\def\reportYear{\universityYear{\year}} % University year
-	
+
 	\def\reportCompany{Company title} % Company title
 	\def\reportCompanyAddress{Company address} % Company address
 	\def\reportCompanyCity{Postal code, CITY} % Company city and postal code
@@ -161,19 +161,19 @@
 	\def\reportSchoolCity{CS 90172, VILLERS-L\`ES-NANCY} % School city and postal code
 	\def\reportSchoolPhone{+33 (0)3 83 68 26 00} % School phone number
 	\def\reportSchoolEmail{contact@telecomnancy.eu} % School contact email
-	
+
 	\def\reportSchoolDiplomaYear{3} % School Diploma Year
-	
+
 	\def\reportSupervisor{Industrial supervisor's name} % Industrial supervisor's name in company or laboratory
 	\def\reportAcademicSupervisor{Academic supervisor's name} % Academic supervisor's name
-	
+
 	\def\place{City} % City of signature for the anti-plagiarism agreement
 	\def\date{\today} % Date of signature for the anti-plagiarism agreement
-	
+
 	\def\reportProjectCustomer{Project done for the XYZ team of DUMMY laboratory}
-	
+
 	\def\reportIndustrialCustomer{Project done in partnership with \reportCompany{}}
-	
+
 	\ifbool{pidr}
 	{\def\reportType{Cross-Disciplinary or Research Project}
 		\def\reportSchoolDiplomaYear{2}}
@@ -184,23 +184,23 @@
 			{\def\reportType{Internship report}
 				\def\reportSchoolDiplomaYear{2}}
 			{\def\reportType{Master Thesis}}}}
-		
+
 }{
 	%false means french
 	\addto\captionsfrench{%
 		\renewcommand\listfigurename{Liste des illustrations}}
-	
+
 	\def\reportAuthor{Nom Prénom}
-	
+
 	\def\reportAuthorAddress{numéro, rue}
 	\def\reportAuthorCity{code postal, VILLE} % Adresse de l'élève
 	\def\reportAuthorPhone{téléphone} % Téléphone de l'élève
 	\def\reportAuthorEmail{\email{courriel}} % Courriel de l'élève
-	
+
 	\def\reportTitle{Titre de stage} % Titre du mémoire
 	\def\reportLongTitle{\reportTitle{}} % Titre plus long du mémoire
 	\def\reportYear{\universityYear{\year}} % Année universitaire
-	
+
 	\def\reportCompany{Nom Entreprise} % Nom de l'entreprise d'accueil
 	\def\reportCompanyAddress{numéro, rue} % Rue de l'entreprise
 	\def\reportCompanyCity{code postal, VILLE} % Ville de l'entreprise
@@ -211,31 +211,31 @@
 	\def\reportSchoolCity{CS 90172, VILLERS-L\`ES-NANCY} % Ville de l'école
 	\def\reportSchoolPhone{+33 (0)3 83 68 26 00} % Téléphone de l'école
 	\def\reportSchoolEmail{contact@telecomnancy.eu}
-	
+
 	\def\reportSchoolDiplomaYear{3} % Année diplomante
-	
+
 	\def\reportSupervisor{Prénom Nom} % Prénom Nom de l'encadrant (pour les PIDR uniquement)
-%	\def\reportIndustrialSupervisor{Prénom Nom} % Prénom Nom de l'encadrant industriel
+	%	\def\reportIndustrialSupervisor{Prénom Nom} % Prénom Nom de l'encadrant industriel
 	\def\reportAcademicSupervisor{Prénom Nom} % Prénom Nom de l'encadrant académique
-	
+
 	\def\place{Ville} % Ville pour la signature pour l'engagement anti-plagiat
 	\def\date{\today} % Date pour la signature de l'engagement anti-plagiat
-	
+
 	\def\reportProjectCustomer{Projet réalisé pour l'équipe XYZ du laboratoire DUMMY} % intitulé du 'client' du PIDR
-	
+
 	\def\reportIndustrialCustomer{Projet réalisé en partenariat avec \reportCompany{}} % intitulé du 'client' du PI
-	
+
 	\ifbool{pidr}
-	   {\def\reportType{Projet interdisciplinaire\newline ou de recherche}\def\reportSchoolDiplomaYear{2}}
+	{\def\reportType{Projet interdisciplinaire\newline ou de recherche}\def\reportSchoolDiplomaYear{2}}
 	{\ifbool{pi}
-	   {\def\reportType{Projet industriel}\def\reportSchoolDiplomaYear{3}}
-	{\ifbool{stage1a}
-	   {\def\reportType{Compte rendu d’expérience en entreprise}\def\reportSchoolDiplomaYear{1}}
-	{\ifbool{stage2a}
-	   {\def\reportType{Rapport de stage}\def\reportSchoolDiplomaYear{2}}
-    {\ifbool{contratpro}
-	{\def\reportType{Contrat de professionnalisation}\def\reportSchoolDiplomaYear{3}}
-	{\def\reportType{Mémoire d'ingénieur}\def\reportSchoolDiplomaYear{3}}}}}}
+		{\def\reportType{Projet industriel}\def\reportSchoolDiplomaYear{3}}
+		{\ifbool{stage1a}
+			{\def\reportType{Compte rendu d’expérience en entreprise}\def\reportSchoolDiplomaYear{1}}
+			{\ifbool{stage2a}
+				{\def\reportType{Rapport de stage}\def\reportSchoolDiplomaYear{2}}
+				{\ifbool{contratpro}
+					{\def\reportType{Contrat de professionnalisation}\def\reportSchoolDiplomaYear{3}}
+					{\def\reportType{Mémoire d'ingénieur}\def\reportSchoolDiplomaYear{3}}}}}}
 }%end of french defs
 
 
@@ -243,97 +243,97 @@
 
 \makeatletter
 \def\maketitle{%
-\pagestyle{empty}
-\begin{center}
-\includegraphics[width=4cm]{figures/school-logo}%images looks better width those customs parameters
-\hspace{22mm}
-\includegraphics[width=3.1cm]{figures/lorraine-inp-logo}
-\hspace{16mm}
-\includegraphics[width=5cm]{figures/university-logo}
+	\pagestyle{empty}
+	\begin{center}
+		\includegraphics[width=4cm]{figures/school-logo}%images looks better width those customs parameters
+		\hspace{22mm}
+		\includegraphics[width=3.1cm]{figures/lorraine-inp-logo}
+		\hspace{16mm}
+		\includegraphics[width=5cm]{figures/university-logo}
 
-\vfill
+		\vfill
 
-{\fontsize{30}{30}\selectfont \reportType{}}
+		{\fontsize{30}{30}\selectfont \reportType{}}
 
-\rule{\textwidth}{1pt}
+		\rule{\textwidth}{1pt}
 
-\bigskip
+		\bigskip
 
-{\fontsize{22}{22}\selectfont \reportTitle{}}
+		{\fontsize{22}{22}\selectfont \reportTitle{}}
 
-\medskip
+		\medskip
 
-{\fontsize{18}{18}\selectfont \bf \reportAuthor{}}
+		{\fontsize{18}{18}\selectfont \bf \reportAuthor{}}
 
-\medskip
+		\medskip
 
 
-\ifbool{english}{%One must be carefull with spaces in the following bloc
-{\fontsize{14}{14}\selectfont \bf Academic Year \reportYear{}}
+		\ifbool{english}{%One must be carefull with spaces in the following bloc
+			{\fontsize{14}{14}\selectfont \bf Academic Year \reportYear{}}
 
-\vfill
-	
-\ifbool{pidr}
-{\reportProjectCustomer{}}
-{\ifbool{pi}
-	{\reportIndustrialCustomer{}}
-	{\ifbool{stage2a}
-		{Second year internship done in partnership with \reportCompany{}}
-		{Final year internship done in partnership with
-			
-			\reportCompany{}
-			
-			in preparation for the engineering diploma of \reportSchool{}}}}
-}{%french version has been changed a bit in appearance to fit the english layout
-{\fontsize{14}{14}\selectfont \bf Année \reportYear{}}
+			\vfill
 
-\vfill
+			\ifbool{pidr}
+			{\reportProjectCustomer{}}
+			{\ifbool{pi}
+				{\reportIndustrialCustomer{}}
+				{\ifbool{stage2a}
+					{Second year internship done in partnership with \reportCompany{}}
+					{Final year internship done in partnership with
 
-\ifbool{pidr}
-  {\reportProjectCustomer{}}
-  {\ifbool{pi}
-    {\reportIndustrialCustomer{}}
-	{\ifbool{stage1a}
-		{Stage de première année réalisé dans l'entreprise \reportCompany{}}
-		{\ifbool{stage2a}
-			{Stage de deuxième année réalisé dans l'entreprise \reportCompany{}}
-			{Stage de fin d'études réalisé dans l'entreprise 
-				
-				\reportCompany{}
+						\reportCompany{}
 
-		en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}}}}}
-}
-\vfill
+						in preparation for the engineering diploma of \reportSchool{}}}}
+		}{%french version has been changed a bit in appearance to fit the english layout
+			{\fontsize{14}{14}\selectfont \bf Année \reportYear{}}
 
-\end{center}
+			\vfill
 
-\ifbool{english}{
-\ifbool{pidr}
-{Supervisor : \reportSupervisor{}}
-{\ifbool{pi}
-	{Industrial supervisor: \reportSupervisor{}
-		
-		Academic supervisor: \reportAcademicSupervisor{}}
-	{Internship supervisor: \reportSupervisor{}
-		
-		Academic supervisor: \reportAcademicSupervisor{}}}
-}{
-\ifbool{pidr}
-{Encadrant : \reportSupervisor{}}
-{\ifbool{pi}
-    {Encadrant industriel : \reportSupervisor{}
+			\ifbool{pidr}
+			{\reportProjectCustomer{}}
+			{\ifbool{pi}
+				{\reportIndustrialCustomer{}}
+				{\ifbool{stage1a}
+					{Stage de première année réalisé dans l'entreprise \reportCompany{}}
+					{\ifbool{stage2a}
+						{Stage de deuxième année réalisé dans l'entreprise \reportCompany{}}
+						{Stage de fin d'études réalisé dans l'entreprise
 
-        Encadrant académique : \reportAcademicSupervisor{}}
-    {\ifbool{stage1a}
-    	{Maître de stage : \reportSupervisor{}}
-    	{Maître de stage : \reportSupervisor{}
+							\reportCompany{}
 
-        Encadrant universitaire : \reportAcademicSupervisor{}}}}
-}
+							en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}}}}}
+		}
+		\vfill
 
-\cleardoublepage
-\setcounter{page}{1}
-\pagestyle{plain}
+	\end{center}
+
+	\ifbool{english}{
+		\ifbool{pidr}
+		{Supervisor : \reportSupervisor{}}
+		{\ifbool{pi}
+			{Industrial supervisor: \reportSupervisor{}
+
+				Academic supervisor: \reportAcademicSupervisor{}}
+			{Internship supervisor: \reportSupervisor{}
+
+				Academic supervisor: \reportAcademicSupervisor{}}}
+	}{
+		\ifbool{pidr}
+		{Encadrant : \reportSupervisor{}}
+		{\ifbool{pi}
+			{Encadrant industriel : \reportSupervisor{}
+
+				Encadrant académique : \reportAcademicSupervisor{}}
+			{\ifbool{stage1a}
+				{Maître de stage : \reportSupervisor{}}
+				{Maître de stage : \reportSupervisor{}
+
+					Encadrant universitaire : \reportAcademicSupervisor{}}}}
+	}
+
+	\cleardoublepage
+	\setcounter{page}{1}
+	\pagestyle{plain}
 }
 \makeatother
 
@@ -341,176 +341,176 @@
 \makeatletter
 \newcommand\insertAntiPlagiarismAgreement[4]{%
 
-  \begin{center} %Maybe one should makes an english version of this... TODO?
-    \Large \bf Déclaration sur l'honneur de non-plagiat
-  \end{center}
+	\begin{center} %Maybe one should makes an english version of this... TODO?
+		\Large \bf Déclaration sur l'honneur de non-plagiat
+	\end{center}
 
-  \medskip
-  \medskip
+	\medskip
+	\medskip
 
-  {\bf Je soussigné(e),}
+	{\bf Je soussigné(e),}
 
-  {\bf Nom, prénom : #1}
+	{\bf Nom, prénom : #1}
 
-  {\bf \'Elève-ingénieur(e) régulièrement inscrit(e) en \reportSchoolDiplomaYear{}\textsuperscript{e} année à \reportSchool{}} % \up should not be used as it is a custom internal command from french babel package which is not guaranted by the package
+	{\bf \'Elève-ingénieur(e) régulièrement inscrit(e) en \reportSchoolDiplomaYear{}\textsuperscript{e} année à \reportSchool{}} % \up should not be used as it is a custom internal command from french babel package which is not guaranted by the package
 
-  {\bf Numéro de carte de l'étudiant(e) :} #2
+	{\bf Numéro de carte de l'étudiant(e) :} #2
 
-  {\bf Année universitaire :} \reportYear{}
+	{\bf Année universitaire :} \reportYear{}
 
-  {\bf Auteur(e) du document, mémoire, rapport ou code informatique intitulé :}
+	{\bf Auteur(e) du document, mémoire, rapport ou code informatique intitulé :}
 
-  \begin{center}
-    \Large \reportLongTitle{}
-  \end{center}
-  \medskip
+	\begin{center}
+		\Large \reportLongTitle{}
+	\end{center}
+	\medskip
 
-  Par la présente, je déclare m'être informé(e) sur les différentes formes de
-  plagiat existantes et sur les techniques et normes de citation et référence.
+	Par la présente, je déclare m'être informé(e) sur les différentes formes de
+	plagiat existantes et sur les techniques et normes de citation et référence.
 
-  Je déclare en outre que le travail rendu est un travail original, issu de ma
-  réflexion personnelle, et qu'il a été rédigé entièrement par mes soins.
-  J'affirme n'avoir ni contrefait, ni falsifié, ni copié tout ou partie de
-  l'\oe{}uvre d'autrui, en particulier texte ou code informatique, dans le but
-  de me l'accaparer.
+	Je déclare en outre que le travail rendu est un travail original, issu de ma
+	réflexion personnelle, et qu'il a été rédigé entièrement par mes soins.
+	J'affirme n'avoir ni contrefait, ni falsifié, ni copié tout ou partie de
+	l'\oe{}uvre d'autrui, en particulier texte ou code informatique, dans le but
+	de me l'accaparer.
 
-  Je certifie donc que toutes formulations, idées, recherches, raisonnements,
-  analyses, programmes, schémas ou autre créations, figurant dans le document
-  et empruntés à un tiers, sont clairement signalés comme tels, selon les
-  usages en vigueur.
+	Je certifie donc que toutes formulations, idées, recherches, raisonnements,
+	analyses, programmes, schémas ou autres créations, figurant dans le document
+	et empruntés à un tiers, sont clairement signalés comme tels, selon les
+	usages en vigueur.
 
-  Je suis conscient(e) que le fait de ne pas citer une source ou de ne pas la
-  citer clairement et complètement est constitutif de plagiat, que le plagiat
-  est considéré comme une faute grave au sein de l'Université, et qu'en cas de
-  manquement aux règles en la matière, j'encourrais des poursuites non
-  seulement devant la commission de discipline de l'établissement mais
-  également devant les tribunaux de la République Fran\c{c}aise.
+	Je suis conscient(e) que le fait de ne pas citer une source ou de ne pas la
+	citer clairement et complètement est constitutif de plagiat, que le plagiat
+	est considéré comme une faute grave au sein de l'Université, et qu'en cas de
+	manquement aux règles en la matière, j'encourrais des poursuites non
+	seulement devant la commission de discipline de l'établissement, mais
+	également devant les tribunaux de la République Fran\c{c}aise.
 
-  \medskip
-  \medskip
+	\medskip
+	\medskip
 
-  \hspace{5cm}{\bf Fait à \place{},     le  \date{}}
+	\hspace{5cm}{\bf Fait à \place{},     le  \date{}}
 
-  \hspace{5cm}\begin{minipage}{0.3\textwidth}
-{\bf Signature :}
-\end{minipage}
-\begin{minipage}{0.6\textwidth}\raggedright
-\includegraphics[scale=#4]{#3}
-\\
-\end{minipage}
-\noindent
+	\hspace{5cm}\begin{minipage}{0.2\textwidth}
+		{\bf Signature :}
+	\end{minipage}
+	\begin{minipage}{0.4\textwidth}\raggedright
+		\includegraphics[scale=#4]{#3}
+		\\
+	\end{minipage}
+	\noindent
 
-\cleardoublepage
+	\cleardoublepage
 }
 \makeatother
 
 
 \makeatletter
 \def\makesecondtitle{%
-\begin{center}
+	\begin{center}
 
-{\fontsize{30}{30}\selectfont \reportType{}}
+		{\fontsize{30}{30}\selectfont \reportType{}}
 
-\rule{\textwidth}{1pt}
+		\rule{\textwidth}{1pt}
 
-\bigskip
+		\bigskip
 
-{\fontsize{22}{22}\selectfont \reportTitle{}}
+		{\fontsize{22}{22}\selectfont \reportTitle{}}
 
-\medskip
+		\medskip
 
-{\fontsize{18}{18}\selectfont \bf \reportAuthor{}}
+		{\fontsize{18}{18}\selectfont \bf \reportAuthor{}}
 
-\medskip
+		\medskip
 
-\ifbool{english}{
-{\fontsize{14}{14}\selectfont \bf Academic Year \reportYear{}}
+		\ifbool{english}{
+			{\fontsize{14}{14}\selectfont \bf Academic Year \reportYear{}}
 
-\vfill
-\ifbool{pidr}
-{\reportProjectCustomer{}}
-{\ifbool{pi}
-	{\reportIndustrialCustomer{}}
-	{\ifbool{stage2a}
-		{Second year internship done in partnership with \reportCompany{}}
-		{Final year internship done in partnership with
-			
-			\reportCompany{}
-			
-			in preparation for the engineering diploma of \reportSchool{}}}}
-}{
-{\fontsize{14}{14}\selectfont \bf Année \reportYear{}}
+			\vfill
+			\ifbool{pidr}
+			{\reportProjectCustomer{}}
+			{\ifbool{pi}
+				{\reportIndustrialCustomer{}}
+				{\ifbool{stage2a}
+					{Second year internship done in partnership with \reportCompany{}}
+					{Final year internship done in partnership with
 
-\vfill
+						\reportCompany{}
 
-\ifbool{pidr}
-  {\reportProjectCustomer{}}
-  {\ifbool{pi}
-    {\reportIndustrialCustomer{}}
-	{\ifbool{stage1a}
-		{Stage de première année réalisé dans l'entreprise \reportCompany{}}
-		{\ifbool{stage2a}
-			{Stage de deuxième année réalisé dans l'entreprise \reportCompany{}}
-			{Stage de fin d'études réalisé dans l'entreprise \reportCompany{}
+						in preparation for the engineering diploma of \reportSchool{}}}}
+		}{
+			{\fontsize{14}{14}\selectfont \bf Année \reportYear{}}
 
-			en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}}}}}
-}
+			\vfill
 
-\vfill
-\end{center}
+			\ifbool{pidr}
+			{\reportProjectCustomer{}}
+			{\ifbool{pi}
+				{\reportIndustrialCustomer{}}
+				{\ifbool{stage1a}
+					{Stage de première année réalisé dans l'entreprise \reportCompany{}}
+					{\ifbool{stage2a}
+						{Stage de deuxième année réalisé dans l'entreprise \reportCompany{}}
+						{Stage de fin d'études réalisé dans l'entreprise \reportCompany{}
 
-\reportAuthor{} \\
-\ifbool{pidr}
-  {}
-  {\ifbool{pi}
-    {}
-  {\reportAuthorAddress{} \\
-    \reportAuthorCity{}\\
-    \reportAuthorPhone{} \\
-  }}
-\reportAuthorEmail{} \\
-\smallskip
+							en vue de l'obtention du diplôme d'ingénieur de \reportSchool{}}}}}
+		}
 
-\reportSchool{} \hfill\smash{\raisebox{-0.5\normalbaselineskip}{\includeSecondCompanyLogo{}}}\\
-\reportSchoolAddress{},\\
-\reportSchoolCity{}\\
-\reportSchoolPhone{}\\
-\email{\reportSchoolEmail}\\
-\smallskip
+		\vfill
+	\end{center}
 
-
-\reportCompany{}\\
-\reportCompanyAddress{}\\
-\reportCompanyCity{}\\
-\reportCompanyPhone{}  \hfill\smash{\raisebox{-0.5\normalbaselineskip}{\includeCompanyLogo{}}}%maybe you will need to modify this line to suites better to the compagny logo size
-
-
-\medskip
-
-\ifbool{english}{
+	\reportAuthor{} \\
 	\ifbool{pidr}
-	{Encadrant : \reportSupervisor{}}
+	{}
 	{\ifbool{pi}
-		{Industrial supervisor: \reportSupervisor{}
-			
-			Academic supervisor: \reportAcademicSupervisor{}}
-		{Internship supervisor: \reportSupervisor{}
-			
-			Academic supervisor: \reportAcademicSupervisor{}}}
-}{
-\ifbool{pidr}
-  {Encadrant : \reportSupervisor{}}
-  {\ifbool{pi}
-    {Encadrant industriel : \reportSupervisor{}
+		{}
+		{\reportAuthorAddress{} \\
+			\reportAuthorCity{}\\
+			\reportAuthorPhone{} \\
+		}}
+	\reportAuthorEmail{} \\
+	\smallskip
 
-      Encadrant académique : \reportAcademicSupervisor{}}
-  {\ifbool{stage1a}
-    	{Maître de stage : \reportSupervisor{}}
-    	{Maître de stage : \reportSupervisor{}
+	\reportSchool{} \hfill\smash{\raisebox{-0.5\normalbaselineskip}{\includeSecondCompanyLogo{}}}\\
+	\reportSchoolAddress{},\\
+	\reportSchoolCity{}\\
+	\reportSchoolPhone{}\\
+	\email{\reportSchoolEmail}\\
+	\smallskip
 
-        Encadrant universitaire : \reportAcademicSupervisor{}}}}
-}
 
-\cleardoublepage
+	\reportCompany{}\\
+	\reportCompanyAddress{}\\
+	\reportCompanyCity{}\\
+	\reportCompanyPhone{}  \hfill\smash{\raisebox{-0.5\normalbaselineskip}{\includeCompanyLogo{}}}%maybe you will need to modify this line to suites better to the compagny logo size
+
+
+	\medskip
+
+	\ifbool{english}{
+		\ifbool{pidr}
+		{Encadrant : \reportSupervisor{}}
+		{\ifbool{pi}
+			{Industrial supervisor: \reportSupervisor{}
+
+				Academic supervisor: \reportAcademicSupervisor{}}
+			{Internship supervisor: \reportSupervisor{}
+
+				Academic supervisor: \reportAcademicSupervisor{}}}
+	}{
+		\ifbool{pidr}
+		{Encadrant : \reportSupervisor{}}
+		{\ifbool{pi}
+			{Encadrant industriel : \reportSupervisor{}
+
+				Encadrant académique : \reportAcademicSupervisor{}}
+			{\ifbool{stage1a}
+				{Maître de stage : \reportSupervisor{}}
+				{Maître de stage : \reportSupervisor{}
+
+					Encadrant universitaire : \reportAcademicSupervisor{}}}}
+	}
+
+	\cleardoublepage
 }
 \makeatother
