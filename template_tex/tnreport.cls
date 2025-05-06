@@ -111,8 +111,50 @@
   %title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
 }
 
+\RequirePackage{tikz}
 
 %%---custom commands---%%
+
+\newcommand{\caseSignature}[3]{
+  \begin{minipage}[t]{0.32\textwidth}
+      \begin{tikzpicture}
+        \draw[thick] (0,0) rectangle (\textwidth, 0.7\textwidth);
+        \if\relax\detokenize{#1}\relax
+        \else
+          \node[anchor=center] at (0.5\textwidth, 0.35\textwidth) {\includegraphics[width=0.9\textwidth,height=0.63\textwidth,keepaspectratio]{#1}};
+        \fi
+      \end{tikzpicture}
+      \textbf{#2} \\
+      \textit{#3} \\
+  \end{minipage}
+}
+
+\newcommand{\signatureLine}[1]{
+  \foreach \case in #1 {
+    \expandafter\caseSignature\case
+  }
+  \\
+}
+
+\newcommand{\addSignaturesLine}[1]{
+  \gappto{\allSignaturesLines}{
+    \signatureLine{#1}
+  }
+}
+
+\newcommand{\printSignatures}{
+  \newpage
+  \thispagestyle{empty}
+  \section*{Signatures}
+  \addcontentsline{toc}{chapter}{Signatures}
+  \vfill
+  \begin{center}
+    \allSignaturesLines
+  \end{center}
+  \vfill
+}
+
+\newcommand{\allSignaturesLines}{}
 
 \newcommand{\email}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
 
