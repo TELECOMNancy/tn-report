@@ -80,11 +80,7 @@
 \RequirePackage{acronym}
 
 
-<<<<<<< HEAD
-\RequirePackage{glossaries-extra} %use this instead of "glossaries" for better looking glossaries
-=======
 \RequirePackage[automake]{glossaries-extra} %use this instead of "glossaries" for better looking glossaries
->>>>>>> quantumcode-martin-patch-1
 \makenoidxglossaries
 
 %only loads the draftwatermark package if it is needed
