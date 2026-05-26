@@ -80,8 +80,8 @@
 \RequirePackage{acronym}
 
 
-\RequirePackage[automake]{glossaries-extra} %use this instead of "glossaries" for better looking glossaries
-\makenoidxglossaries
+\RequirePackage[automake=immediate]{glossaries-extra} %use this instead of "glossaries" for better looking glossaries
+\makeglossaries
 
 %only loads the draftwatermark package if it is needed
 \ifbool{watermark}{\RequirePackage{draftwatermark}\SetWatermarkText{\ifbool{english}{Classified}{Confidentiel}}\SetWatermarkScale{.8}}{}
